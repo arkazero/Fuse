@@ -1,0 +1,156 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GE: Transforming and Filtering Objects with Camel 1.0
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ jaxb-filter ---
+[INFO] Deleting /home/student/jb421/labs/jaxb-filter/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ jaxb-filter ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0-redhat-1:compile (default-compile) @ jaxb-filter ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to /home/student/jb421/labs/jaxb-filter/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ jaxb-filter ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/student/jb421/labs/jaxb-filter/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0-redhat-1:testCompile (default-testCompile) @ jaxb-filter ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/student/jb421/labs/jaxb-filter/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.9:test (default-test) @ jaxb-filter ---
+[INFO] Surefire report directory: /home/student/jb421/labs/jaxb-filter/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.redhat.training.jb421.TransformRouteTest
+[                          main] TestContextManager             INFO  Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+[                          main] XmlBeanDefinitionReader        INFO  Loading XML bean definitions from class path resource [META-INF/spring/bundle-camel-context.xml]
+[                          main] CamelSpringTestContextLoader   INFO  Disabling Camel JMX globally for tests by default.  Use the DisableJMX annotation to override the default setting.
+[                          main] GenericApplicationContext      INFO  Refreshing org.springframework.context.support.GenericApplicationContext@3f49dace: startup date [Wed Jul 05 17:44:53 EDT 2017]; root of context hierarchy
+[                          main] DefaultListableBeanFactory     INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@623e088f: defining beans [transformRouteBuilder,template,consumerTemplate,jb421Context:beanPostProcessor,jb421Context,connectionFactory,jmsConfig,activemq,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+[                          main] CamelSpringTestContextLoader   INFO  Setting shutdown timeout to [10 SECONDS] on CamelContext with name [jb421Context].
+[                          main] CamelSpringTestContextLoader   INFO  Enabling lazy loading of type converters on CamelContext with name [jb421Context].
+[                          main] CamelSpringTestContextLoader   INFO  Starting CamelContext with name [jb421Context].
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is starting
+[                          main] DefaultManagementStrategy      INFO  JMX is disabled
+[                          main] SpringCamelContext             INFO  AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+[                          main] SpringCamelContext             INFO  StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+[                          main] SpringCamelContext             INFO  Route: route2 started and consuming from: Endpoint[direct://jsonOrderLog]
+[                          main] SpringCamelContext             INFO  Route: route1 started and consuming from: Endpoint[activemq://queue:orderInput?password=xxxxxx&username=admin]
+[                          main] SpringCamelContext             INFO  Total 2 routes, of which 2 are started.
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) started in 0.772 seconds
+[                          main] MockEndpoint                   INFO  Asserting: Endpoint[mock://fulfillmentSystem] is satisfied
+[d #0 - JmsConsumer[orderInput]] route1                         INFO  XML Body: <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<order>
+    <orderItems>
+        <orderItem>
+            <extPrice>15.99</extPrice>
+            <item>
+                <author>Yann Martel</author>
+                <category>Fiction</category>
+                <description>After deciding to sell their zoo in India and move to Canada, Santosh and Gita Patel board a freighter with their sons and a few remaining animals. Tragedy strikes when a terrible storm sinks the ship, leaving the Patels' teenage son, Pi, as the only human survivor. However, Pi is not alone; a fearsome Bengal tiger has also found refuge aboard the lifeboat. As days turn into weeks and weeks drag into months, Pi and the tiger must learn to trust each other if both are to survive.</description>
+                <imagePath>books/lifeofpi/cover.jpg</imagePath>
+                <newItem>false</newItem>
+                <price>15.99</price>
+                <sku>1234567</sku>
+                <title>Life of Pi</title>
+            </item>
+            <quantity>1</quantity>
+        </orderItem>
+    </orderItems>
+    <customer>
+        <admin>false</admin>
+        <billingAddress>
+            <city>Raleigh</city>
+            <country>USA</country>
+            <postalCode>27601</postalCode>
+            <state>NC</state>
+            <streetAddress1>100 E. Davie Street</streetAddress1>
+        </billingAddress>
+        <email>tester@redhat.com</email>
+        <firstName>Bob</firstName>
+        <lastName>Tester</lastName>
+        <password>password</password>
+        <shippingAddress>
+            <city>Raleigh</city>
+            <country>USA</country>
+            <postalCode>27601</postalCode>
+            <state>NC</state>
+            <streetAddress1>100 E. Davie Street</streetAddress1>
+        </shippingAddress>
+        <username>tester1</username>
+    </customer>
+    <delivered>false</delivered>
+    <orderDate>2017-07-05T17:44:57.311-04:00</orderDate>
+</order>
+
+[d #0 - JmsConsumer[orderInput]] XMLSerializer                  INFO  Using default type string
+[d #0 - JmsConsumer[orderInput]] route1                         INFO  JSON Body: {"orderItems":[{"extPrice":"15.99","item":{"author":"Yann Martel","category":"Fiction","description":"After deciding to sell their zoo in India and move to Canada, Santosh and Gita Patel board a freighter with their sons and a few remaining animals. Tragedy strikes when a terrible storm sinks the ship, leaving the Patels' teenage son, Pi, as the only human survivor. However, Pi is not alone; a fearsome Bengal tiger has also found refuge aboard the lifeboat. As days turn into weeks and weeks drag into months, Pi and the tiger must learn to trust each other if both are to survive.","imagePath":"books/lifeofpi/cover.jpg","newItem":"false","price":"15.99","sku":"1234567","title":"Life of Pi"},"quantity":"1"}],"customer":{"admin":"false","billingAddress":{"city":"Raleigh","country":"USA","postalCode":"27601","state":"NC","streetAddress1":"100 E. Davie Street"},"email":"tester@redhat.com","firstName":"Bob","lastName":"Tester","password":"password","shippingAddress":{"city":"Raleigh","country":"USA","postalCode":"27601","state":"NC","streetAddress1":"100 E. Davie Street"},"username":"tester1"},"delivered":"false","orderDate":"2017-07-05T17:44:57.311-04:00"}
+[                          main] MockEndpoint                   INFO  Asserting: Endpoint[mock://orderLog] is satisfied
+[21Context) thread #1 - WireTap] route2                         INFO  Order received: {"orderItems":[{"extPrice":"15.99","item":{"author":"Yann Martel","category":"Fiction","description":"After deciding to sell their zoo in India and move to Canada, Santosh and Gita Patel board a freighter with their sons and a few remaining animals. Tragedy strikes when a terrible storm sinks the ship, leaving the Patels' teenage son, Pi, as the only human survivor. However, Pi is not alone; a fearsome Bengal tiger has also found refuge aboard the lifeboat. As days turn into weeks and weeks drag into months, Pi and the tiger must learn to trust each other if both are to survive.","imagePath":"books/lifeofpi/cover.jpg","newItem":"false","price":"15.99","sku":"1234567","title":"Life of Pi"},"quantity":"1"}],"customer":{"admin":"false","billingAddress":{"city":"Raleigh","country":"USA","postalCode":"27601","state":"NC","streetAddress1":"100 E. Davie Street"},"email":"tester@redhat.com","firstName":"Bob","lastName":"Tester","password":"password","shippingAddress":{"city":"Raleigh","country":"USA","postalCode":"27601","state":"NC","streetAddress1":"100 E. Davie Street"},"username":"tester1"},"delivered":"false","orderDate":"2017-07-05T17:44:57.311-04:00"}
+[                          main] TransformRouteTest             INFO  ********************************************************************************
+[                          main] TransformRouteTest             INFO  Testing done: testDroppingUndeliveredOrder(com.redhat.training.jb421.TransformRouteTest)
+[                          main] TransformRouteTest             INFO  Took: 2.648 seconds (2648 millis)
+[                          main] TransformRouteTest             INFO  ********************************************************************************
+[                          main] GenericApplicationContext      INFO  Closing org.springframework.context.support.GenericApplicationContext@3f49dace: startup date [Wed Jul 05 17:44:53 EDT 2017]; root of context hierarchy
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is shutting down
+[                          main] DefaultShutdownStrategy        INFO  Starting to graceful shutdown 2 routes (timeout 10 seconds)
+[text) thread #2 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: route1 shutdown complete, was consuming from: Endpoint[activemq://queue:orderInput?password=xxxxxx&username=admin]
+[text) thread #2 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: route2 shutdown complete, was consuming from: Endpoint[direct://jsonOrderLog]
+[                          main] DefaultShutdownStrategy        INFO  Graceful shutdown of 2 routes completed in 0 seconds
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) uptime 4.192 seconds
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is shutdown in 0.730 seconds
+[                          main] DefaultListableBeanFactory     INFO  Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@623e088f: defining beans [transformRouteBuilder,template,consumerTemplate,jb421Context:beanPostProcessor,jb421Context,connectionFactory,jmsConfig,activemq,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+[                          main] XmlBeanDefinitionReader        INFO  Loading XML bean definitions from class path resource [META-INF/spring/bundle-camel-context.xml]
+[                          main] CamelSpringTestContextLoader   INFO  Disabling Camel JMX globally for tests by default.  Use the DisableJMX annotation to override the default setting.
+[                          main] GenericApplicationContext      INFO  Refreshing org.springframework.context.support.GenericApplicationContext@3a627c80: startup date [Wed Jul 05 17:44:59 EDT 2017]; root of context hierarchy
+[                          main] DefaultListableBeanFactory     INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@7965a51c: defining beans [transformRouteBuilder,template,consumerTemplate,jb421Context:beanPostProcessor,jb421Context,connectionFactory,jmsConfig,activemq,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+[                          main] CamelSpringTestContextLoader   INFO  Setting shutdown timeout to [10 SECONDS] on CamelContext with name [jb421Context].
+[                          main] CamelSpringTestContextLoader   INFO  Enabling lazy loading of type converters on CamelContext with name [jb421Context].
+[                          main] CamelSpringTestContextLoader   INFO  Starting CamelContext with name [jb421Context].
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is starting
+[                          main] DefaultManagementStrategy      INFO  JMX is disabled
+[                          main] SpringCamelContext             INFO  AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+[                          main] SpringCamelContext             INFO  StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+[                          main] SpringCamelContext             INFO  Route: route4 started and consuming from: Endpoint[direct://jsonOrderLog]
+[                          main] SpringCamelContext             INFO  Route: route3 started and consuming from: Endpoint[activemq://queue:orderInput?password=xxxxxx&username=admin]
+[                          main] SpringCamelContext             INFO  Total 2 routes, of which 2 are started.
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) started in 0.073 seconds
+[                          main] MockEndpoint                   INFO  Asserting: Endpoint[mock://fulfillmentSystem] is satisfied
+[                          main] MockEndpoint                   INFO  Asserting: Endpoint[mock://orderLog] is satisfied
+[                          main] TransformRouteTest             INFO  ********************************************************************************
+[                          main] TransformRouteTest             INFO  Testing done: testDroppingDeliveredOrder(com.redhat.training.jb421.TransformRouteTest)
+[                          main] TransformRouteTest             INFO  Took: 2.096 seconds (2096 millis)
+[                          main] TransformRouteTest             INFO  ********************************************************************************
+[                          main] GenericApplicationContext      INFO  Closing org.springframework.context.support.GenericApplicationContext@3a627c80: startup date [Wed Jul 05 17:44:59 EDT 2017]; root of context hierarchy
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is shutting down
+[                          main] DefaultShutdownStrategy        INFO  Starting to graceful shutdown 2 routes (timeout 10 seconds)
+[d #3 - JmsConsumer[orderInput]] ultJmsMessageListenerContainer WARN  Rejecting received message because of the listener container having been stopped in the meantime: ActiveMQObjectMessage {commandId = 5, responseRequired = true, messageId = ID:workstation.lab.example.com-52248-1499291095084-7:1:1:1:1, originalDestination = null, originalTransactionId = null, producerId = ID:workstation.lab.example.com-52248-1499291095084-7:1:1:1, destination = queue://orderInput, transactionId = null, expiration = 0, timestamp = 1499291101293, arrival = 0, brokerInTime = 1499291101293, brokerOutTime = 1499291101298, correlationId = null, replyTo = null, persistent = true, type = null, priority = 4, groupID = null, groupSequence = 0, targetConsumerId = null, compressed = false, userID = null, content = org.apache.activemq.util.ByteSequence@35726c46, marshalledProperties = null, dataStructure = null, redeliveryCounter = 0, size = 0, properties = null, readOnlyProperties = true, readOnlyBody = true, droppable = false, jmsXGroupFirstForConsumer = false}
+[text) thread #4 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: route3 shutdown complete, was consuming from: Endpoint[activemq://queue:orderInput?password=xxxxxx&username=admin]
+[text) thread #4 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: route4 shutdown complete, was consuming from: Endpoint[direct://jsonOrderLog]
+[                          main] DefaultShutdownStrategy        INFO  Graceful shutdown of 2 routes completed in 0 seconds
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) uptime 2.199 seconds
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is shutdown in 0.027 seconds
+[                          main] DefaultListableBeanFactory     INFO  Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@7965a51c: defining beans [transformRouteBuilder,template,consumerTemplate,jb421Context:beanPostProcessor,jb421Context,connectionFactory,jmsConfig,activemq,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.845 sec
+
+Results :
+
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 15.498 s
+[INFO] Finished at: 2017-07-05T17:45:01-04:00
+[INFO] Final Memory: 27M/257M
+[INFO] ------------------------------------------------------------------------
