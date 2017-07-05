@@ -1,0 +1,87 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GE: Transforming Messages with Custom Type Converters 1.0
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ custom-converter ---
+[INFO] Deleting /home/student/jb421/labs/custom-converter/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ custom-converter ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0-redhat-1:compile (default-compile) @ custom-converter ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /home/student/jb421/labs/custom-converter/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ custom-converter ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/student/jb421/labs/custom-converter/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0-redhat-1:testCompile (default-testCompile) @ custom-converter ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/student/jb421/labs/custom-converter/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.9:test (default-test) @ custom-converter ---
+[INFO] Surefire report directory: /home/student/jb421/labs/custom-converter/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.redhat.training.jb421.TransformRouteTest
+[                          main] TestContextManager             INFO  Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+[                          main] XmlBeanDefinitionReader        INFO  Loading XML bean definitions from class path resource [META-INF/spring/bundle-camel-context.xml]
+[                          main] CamelSpringTestContextLoader   INFO  Disabling Camel JMX globally for tests by default.  Use the DisableJMX annotation to override the default setting.
+[                          main] GenericApplicationContext      INFO  Refreshing org.springframework.context.support.GenericApplicationContext@26be92ad: startup date [Wed Jul 05 18:38:43 EDT 2017]; root of context hierarchy
+[                          main] DefaultListableBeanFactory     INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@7f8a9499: defining beans [transformRouteBuilder,template,consumerTemplate,jb421Context:beanPostProcessor,jb421Context,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+[                          main] CamelSpringTestContextLoader   INFO  Setting shutdown timeout to [10 SECONDS] on CamelContext with name [jb421Context].
+[                          main] CamelSpringTestContextLoader   INFO  Enabling lazy loading of type converters on CamelContext with name [jb421Context].
+[                          main] CamelSpringTestContextLoader   INFO  Starting CamelContext with name [jb421Context].
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is starting
+[                          main] DefaultManagementStrategy      INFO  JMX is disabled
+[                          main] SpringCamelContext             INFO  AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+[                          main] SpringCamelContext             INFO  StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+[                          main] SpringCamelContext             INFO  Route: route1 started and consuming from: Endpoint[file://orders/incoming]
+[                          main] SpringCamelContext             INFO  Route: route2 started and consuming from: Endpoint[direct://orderLog]
+[                          main] SpringCamelContext             INFO  Total 2 routes, of which 2 are started.
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) started in 0.228 seconds
+[ad #0 - file://orders/incoming] route2                         INFO  Order [id=1, orderDate=Tue Oct 11 00:00:00 EDT 2016, discount=6.08, delivered=false, customer=Customer [id=1, firstName=Bob, lastName=Tester, username=tester1, password=password, email=tester1@redhat.com, admin=false, streetAddress1=100 E. Davie Street, streetAddress2=Box 192, streetAddress3=null, city=Raleigh, state=NC, postalCode=27601, country=USA], itemSku=1456]
+[ad #0 - file://orders/incoming] route2                         INFO  Order [id=2, orderDate=Wed Jan 22 00:00:00 EST 2014, discount=75.70, delivered=false, customer=Customer [id=1, firstName=Christopher, lastName=Tester, username=tester2, password=password, email=tester2@redhat.com, admin=false, streetAddress1=100 E. Davie Street, streetAddress2=Box 352, streetAddress3=null, city=Raleigh, state=NC, postalCode=27601, country=USA], itemSku=1236]
+[ad #0 - file://orders/incoming] route2                         INFO  Order [id=3, orderDate=Wed May 01 00:00:00 EDT 2013, discount=6.88, delivered=false, customer=Customer [id=1, firstName=Rich, lastName=Tester, username=tester3, password=password, email=tester3@redhat.com, admin=true, streetAddress1=100 E. Davie Street, streetAddress2=Box 687, streetAddress3=null, city=Raleigh, state=NC, postalCode=27601, country=USA], itemSku=1326]
+[ad #0 - file://orders/incoming] route2                         INFO  Order [id=4, orderDate=Wed Aug 15 00:00:00 EDT 2012, discount=5.85, delivered=false, customer=Customer [id=1, firstName=Sarah, lastName=Tester, username=tester4, password=password, email=tester4@redhat.com, admin=false, streetAddress1=100 E. Davie Street, streetAddress2=Box 267, streetAddress3=null, city=Raleigh, state=NC, postalCode=27601, country=USA], itemSku=1456]
+[ad #0 - file://orders/incoming] route2                         INFO  Order [id=5, orderDate=Thu Sep 01 00:00:00 EDT 2016, discount=61.02, delivered=false, customer=Customer [id=1, firstName=Ellen, lastName=Tester, username=tester5, password=password, email=tester5@redhat.com, admin=true, streetAddress1=100 E. Davie Street, streetAddress2=Box 892, streetAddress3=null, city=Raleigh, state=NC, postalCode=27601, country=USA], itemSku=1216]
+[ad #0 - file://orders/incoming] route2                         INFO  Order [id=6, orderDate=Tue Oct 11 00:00:00 EDT 2016, discount=17.85, delivered=false, customer=Customer [id=1, firstName=Tom, lastName=Tester, username=tester6, password=password, email=tester6@redhat.com, admin=false, streetAddress1=100 E. Davie Street, streetAddress2=Box 272, streetAddress3=null, city=Raleigh, state=NC, postalCode=27601, country=USA], itemSku=1296]
+[ad #0 - file://orders/incoming] route2                         INFO  Order [id=7, orderDate=Thu Feb 11 00:00:00 EST 2016, discount=9.09, delivered=false, customer=Customer [id=1, firstName=Trey, lastName=Tester, username=tester7, password=password, email=tester7@redhat.com, admin=true, streetAddress1=100 E. Davie Street, streetAddress2=Box 298, streetAddress3=null, city=Raleigh, state=NC, postalCode=27601, country=USA], itemSku=1726]
+[ad #0 - file://orders/incoming] route2                         INFO  Order [id=8, orderDate=Thu Dec 11 00:00:00 EST 2014, discount=8.35, delivered=false, customer=Customer [id=1, firstName=Sandra, lastName=Tester, username=tester8, password=password, email=tester8@redhat.com, admin=true, streetAddress1=100 E. Davie Street, streetAddress2=Box 692, streetAddress3=null, city=Raleigh, state=NC, postalCode=27601, country=USA], itemSku=1926]
+[ad #0 - file://orders/incoming] route2                         INFO  Order [id=9, orderDate=Wed Oct 14 00:00:00 EDT 2015, discount=6.55, delivered=false, customer=Customer [id=1, firstName=Shawn, lastName=Tester, username=tester9, password=password, email=tester9@redhat.com, admin=false, streetAddress1=100 E. Davie Street, streetAddress2=Box 792, streetAddress3=null, city=Raleigh, state=NC, postalCode=27601, country=USA], itemSku=1756]
+[                          main] MockEndpoint                   INFO  Asserting: Endpoint[mock://orderLoggingSystem] is satisfied
+[                          main] MockEndpoint                   INFO  Asserting: Endpoint[mock://orderQueue] is satisfied
+[                          main] TransformRouteTest             INFO  ********************************************************************************
+[                          main] TransformRouteTest             INFO  Testing done: testDroppingCatalogItems(com.redhat.training.jb421.TransformRouteTest)
+[                          main] TransformRouteTest             INFO  Took: 2.014 seconds (2014 millis)
+[                          main] TransformRouteTest             INFO  ********************************************************************************
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.784 sec
+[                      Thread-1] GenericApplicationContext      INFO  Closing org.springframework.context.support.GenericApplicationContext@26be92ad: startup date [Wed Jul 05 18:38:43 EDT 2017]; root of context hierarchy
+[                      Thread-1] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is shutting down
+[                      Thread-1] DefaultShutdownStrategy        INFO  Starting to graceful shutdown 2 routes (timeout 10 seconds)
+[text) thread #1 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: route2 shutdown complete, was consuming from: Endpoint[direct://orderLog]
+[text) thread #1 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: route1 shutdown complete, was consuming from: Endpoint[file://orders/incoming]
+[                      Thread-1] DefaultShutdownStrategy        INFO  Graceful shutdown of 2 routes completed in 0 seconds
+[                      Thread-1] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) uptime 2.283 seconds
+[                      Thread-1] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is shutdown in 0.011 seconds
+[                      Thread-1] DefaultListableBeanFactory     INFO  Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@7f8a9499: defining beans [transformRouteBuilder,template,consumerTemplate,jb421Context:beanPostProcessor,jb421Context,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 9.291 s
+[INFO] Finished at: 2017-07-05T18:38:45-04:00
+[INFO] Final Memory: 22M/212M
+[INFO] ------------------------------------------------------------------------
