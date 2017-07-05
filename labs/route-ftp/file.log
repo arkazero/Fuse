@@ -1,0 +1,89 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GE: Creating a route with the FTP component 1.0
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> camel-maven-plugin:2.17.0.redhat-630187:run (default-cli) > test-compile @ route-ftp >>>
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ route-ftp ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0-redhat-1:compile (default-compile) @ route-ftp ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/student/jb421/labs/route-ftp/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ route-ftp ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/student/jb421/labs/route-ftp/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0-redhat-1:testCompile (default-testCompile) @ route-ftp ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/student/jb421/labs/route-ftp/target/test-classes
+[INFO] 
+[INFO] <<< camel-maven-plugin:2.17.0.redhat-630187:run (default-cli) < test-compile @ route-ftp <<<
+[INFO] 
+[INFO] --- camel-maven-plugin:2.17.0.redhat-630187:run (default-cli) @ route-ftp ---
+[INFO] Using org.apache.camel.spring.Main to initiate a CamelContext
+[INFO] Starting Camel ...
+[pache.camel.spring.Main.main()] ClassPathXmlApplicationContext INFO  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@39d3d49d: startup date [Mon Jul 03 20:29:13 EDT 2017]; root of context hierarchy
+[pache.camel.spring.Main.main()] XmlBeanDefinitionReader        INFO  Loading XML bean definitions from file [/home/student/jb421/labs/route-ftp/target/classes/META-INF/spring/bundle-context.xml]
+[pache.camel.spring.Main.main()] DefaultListableBeanFactory     INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@3ce2a728: defining beans [ftpRouteBuilder,template,consumerTemplate,jb421Context:beanPostProcessor,jb421Context]; root of factory hierarchy
+[pache.camel.spring.Main.main()] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is starting
+[pache.camel.spring.Main.main()] ManagedManagementStrategy      INFO  JMX is enabled
+[pache.camel.spring.Main.main()] DefaultTypeConverter           INFO  Loaded 183 type converters
+[pache.camel.spring.Main.main()] DefaultRuntimeEndpointRegistry INFO  Runtime endpoint registry is in extended mode gathering usage statistics of all incoming and outgoing endpoints (cache limit: 1000)
+[pache.camel.spring.Main.main()] SpringCamelContext             INFO  AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+[pache.camel.spring.Main.main()] SpringCamelContext             INFO  StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+[pache.camel.spring.Main.main()] SpringCamelContext             INFO  Route: route1 started and consuming from: Endpoint[ftp://infrastructure.lab.example.com?delete=true&include=order.*xml&password=xxxxxx&username=ftpuser1]
+[pache.camel.spring.Main.main()] SpringCamelContext             INFO  Total 1 routes, of which 1 are started.
+[pache.camel.spring.Main.main()] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) started in 0.959 seconds
+[infrastructure.lab.example.com] route1                         INFO  New file order-1.xml picked up from infrastructure.lab.example.com
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Body: null
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Headers:
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: breadcrumbId | Value: ID-workstation-lab-example-com-59333-1499128155256-0-1
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFileAbsolute | Value: false
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFileAbsolutePath | Value: order-1.xml
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFileHost | Value: infrastructure.lab.example.com
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFileLastModified | Value: 1499142540000
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFileLength | Value: 261
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFileName | Value: order-1.xml
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFileNameConsumed | Value: order-1.xml
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFileNameOnly | Value: order-1.xml
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFileParent | Value: /
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFilePath | Value: /order-1.xml
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFileRelativePath | Value: order-1.xml
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFtpReplyCode | Value: 226
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFtpReplyString | Value: 226 Transfer complete.
+
+[infrastructure.lab.example.com] route1                         INFO  New file order-2.xml picked up from infrastructure.lab.example.com
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Body: null
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Headers:
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: breadcrumbId | Value: ID-workstation-lab-example-com-59333-1499128155256-0-3
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFileAbsolute | Value: false
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFileAbsolutePath | Value: order-2.xml
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFileHost | Value: infrastructure.lab.example.com
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFileLastModified | Value: 1499142540000
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFileLength | Value: 268
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFileName | Value: order-2.xml
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFileNameConsumed | Value: order-2.xml
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFileNameOnly | Value: order-2.xml
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFileParent | Value: /
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFilePath | Value: /order-2.xml
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFileRelativePath | Value: order-2.xml
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFtpReplyCode | Value: 226
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFtpReplyString | Value: 226 Transfer complete.
+
+[                      Thread-1] MainSupport$HangupInterceptor  INFO  Received hang up - stopping the main instance.
+[                      Thread-1] ClassPathXmlApplicationContext INFO  Closing org.springframework.context.support.ClassPathXmlApplicationContext@39d3d49d: startup date [Mon Jul 03 20:29:13 EDT 2017]; root of context hierarchy
+[                      Thread-1] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is shutting down
+[                      Thread-1] DefaultShutdownStrategy        INFO  Starting to graceful shutdown 1 routes (timeout 300 seconds)
+[text) thread #1 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: route1 shutdown complete, was consuming from: Endpoint[ftp://infrastructure.lab.example.com?delete=true&include=order.*xml&password=xxxxxx&username=ftpuser1]
+[                      Thread-1] DefaultShutdownStrategy        INFO  Graceful shutdown of 1 routes completed in 0 seconds
+[                      Thread-1] MainLifecycleStrategy          INFO  CamelContext: jb421Context has been shutdown, triggering shutdown of the JVM.
+[                      Thread-1] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) uptime 1 minute
+[                      Thread-1] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is shutdown in 0.050 seconds
+[                      Thread-1] DefaultListableBeanFactory     INFO  Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@3ce2a728: defining beans [ftpRouteBuilder,template,consumerTemplate,jb421Context:beanPostProcessor,jb421Context]; root of factory hierarchy

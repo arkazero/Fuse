@@ -1,0 +1,31 @@
+<order>
+	<orderId>3</orderId>
+	<orderDate>2016-12-10T12:01:00-05:00</orderDate>
+	<discount>144.13</discount>
+	<delivered>true</delivered>
+	<customer>
+		<shippingAddress>
+			<state>BR</state>
+		</shippingAddress>
+	</customer>
+	<orderItems>
+		<orderItem>
+			<orderItemId>7</orderItemId>
+			<orderItemQty>1</orderItemQty>
+			<orderItemPublisherName>ORly</orderItemPublisherName>
+			<orderItemPrice>10.59</orderItemPrice>
+		</orderItem>
+		<orderItem>
+			<orderItemId>8</orderItemId>
+			<orderItemQty>2</orderItemQty>
+			<orderItemPublisherName>ABC Company</orderItemPublisherName>
+			<orderItemPrice>25.59</orderItemPrice>
+		</orderItem>
+		<orderItem>
+			<orderItemId>9</orderItemId>
+			<orderItemQty>4</orderItemQty>
+			<orderItemPublisherName>Namming</orderItemPublisherName>
+			<orderItemPrice>20.59</orderItemPrice>
+		</orderItem>
+	</orderItems>
+</order>

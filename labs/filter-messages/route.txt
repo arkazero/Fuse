@@ -1,0 +1,2 @@
+from("file://origin")
+.to("file://destination?fileExist=Append&fileName=output.xml");

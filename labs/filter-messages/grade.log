@@ -1,0 +1,79 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GE: Developing routes filtering messages 1.0
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ filter-messages ---
+[INFO] Deleting /home/student/jb421/labs/filter-messages/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ filter-messages ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0-redhat-1:compile (default-compile) @ filter-messages ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/student/jb421/labs/filter-messages/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ filter-messages ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/student/jb421/labs/filter-messages/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0-redhat-1:testCompile (default-testCompile) @ filter-messages ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/student/jb421/labs/filter-messages/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.9:test (default-test) @ filter-messages ---
+[INFO] Surefire report directory: /home/student/jb421/labs/filter-messages/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.redhat.training.jb421.filter.FilterPatternTest
+[main] INFO com.redhat.training.jb421.filter.FilterPatternTest - ********************************************************************************
+[main] INFO com.redhat.training.jb421.filter.FilterPatternTest - Testing: testRouteIsProcessingAllFiles(com.redhat.training.jb421.filter.FilterPatternTest)
+[main] INFO com.redhat.training.jb421.filter.FilterPatternTest - ********************************************************************************
+Jul 03, 2017 8:55:43 PM org.springframework.context.support.ClassPathXmlApplicationContext prepareRefresh
+INFO: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@735b478: startup date [Mon Jul 03 20:55:43 EDT 2017]; root of context hierarchy
+Jul 03, 2017 8:55:43 PM org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+INFO: Loading XML bean definitions from class path resource [META-INF/spring/bundle-context.xml]
+Jul 03, 2017 8:55:45 PM org.springframework.beans.factory.support.DefaultListableBeanFactory preInstantiateSingletons
+INFO: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@61710c6: defining beans [fileRouteBuilder,template,consumerTemplate,jb421Context:beanPostProcessor,jb421Context]; root of factory hierarchy
+[main] INFO org.apache.camel.spring.SpringCamelContext - Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is starting
+[main] INFO org.apache.camel.management.ManagedManagementStrategy - JMX is enabled
+[main] INFO org.apache.camel.impl.converter.DefaultTypeConverter - Loaded 183 type converters
+[main] INFO org.apache.camel.impl.DefaultRuntimeEndpointRegistry - Runtime endpoint registry is in extended mode gathering usage statistics of all incoming and outgoing endpoints (cache limit: 1000)
+[main] INFO org.apache.camel.spring.SpringCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+[main] INFO org.apache.camel.spring.SpringCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+[main] INFO org.apache.camel.spring.SpringCamelContext - Route: route1 started and consuming from: Endpoint[file://origin]
+[main] INFO org.apache.camel.spring.SpringCamelContext - Total 1 routes, of which 1 are started.
+[main] INFO org.apache.camel.spring.SpringCamelContext - Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) started in 0.636 seconds
+[main] INFO com.redhat.training.jb421.filter.FilterPatternTest - ********************************************************************************
+[main] INFO com.redhat.training.jb421.filter.FilterPatternTest - Testing done: testRouteIsProcessingAllFiles(com.redhat.training.jb421.filter.FilterPatternTest)
+[main] INFO com.redhat.training.jb421.filter.FilterPatternTest - Took: 5.034 seconds (5034 millis)
+[main] INFO com.redhat.training.jb421.filter.FilterPatternTest - ********************************************************************************
+[main] INFO org.apache.camel.spring.SpringCamelContext - Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is shutting down
+[main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Starting to graceful shutdown 1 routes (timeout 10 seconds)
+[Camel (jb421Context) thread #1 - ShutdownTask] INFO org.apache.camel.impl.DefaultShutdownStrategy - Route: route1 shutdown complete, was consuming from: Endpoint[file://origin]
+[main] INFO org.apache.camel.impl.DefaultShutdownStrategy - Graceful shutdown of 1 routes completed in 0 seconds
+[main] INFO org.apache.camel.spring.SpringCamelContext - Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) uptime 5.699 seconds
+[main] INFO org.apache.camel.spring.SpringCamelContext - Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is shutdown in 0.017 seconds
+Jul 03, 2017 8:55:51 PM org.springframework.context.support.ClassPathXmlApplicationContext doClose
+INFO: Closing org.springframework.context.support.ClassPathXmlApplicationContext@735b478: startup date [Mon Jul 03 20:55:43 EDT 2017]; root of context hierarchy
+Jul 03, 2017 8:55:51 PM org.springframework.beans.factory.support.DefaultListableBeanFactory destroySingletons
+INFO: Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@61710c6: defining beans [fileRouteBuilder,template,consumerTemplate,jb421Context:beanPostProcessor,jb421Context]; root of factory hierarchy
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.979 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 12.028 s
+[INFO] Finished at: 2017-07-03T20:55:51-04:00
+[INFO] Final Memory: 22M/220M
+[INFO] ------------------------------------------------------------------------

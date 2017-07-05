@@ -1,0 +1,21 @@
+<order>
+	<orderId>1</orderId>
+	<orderItems>
+		<orderItem>
+			<orderItemId>1</orderItemId>
+			<orderItemQty>1</orderItemQty>
+			<orderItemPublisherName>ORly</orderItemPublisherName>
+			<orderItemPrice>10.59</orderItemPrice>
+		</orderItem>
+	</orderItems>
+</order><order>
+	<orderId>2</orderId>
+	<orderItems>
+		<orderItem>
+			<orderItemId>2</orderItemId>
+			<orderItemQty>1</orderItemQty>
+			<orderItemPublisherName>ABC Company</orderItemPublisherName>
+			<orderItemPrice>15.59</orderItemPrice>
+		</orderItem>
+	</orderItems>
+</order>

@@ -1,0 +1,36 @@
+<order>
+	<orderId>6</orderId>
+	<orderDate>2016-12-11T12:05:00-05:00</orderDate>
+	<totalInvoice>109.72</totalInvoice>
+	<customer>
+		<shippingAddress>
+			<state/>
+		</shippingAddress>
+	</customer>
+	<orderItems>
+		<orderItem>
+			<orderItemId>12</orderItemId>
+			<orderItemQty>1</orderItemQty>
+			<orderItemPublisherName>ABC Company</orderItemPublisherName>
+			<orderItemPrice>10.59</orderItemPrice>
+		</orderItem>
+		<orderItem>
+			<orderItemId>13</orderItemId>
+			<orderItemQty>1</orderItemQty>
+			<orderItemPublisherName>ORly</orderItemPublisherName>
+			<orderItemPrice>10.59</orderItemPrice>
+		</orderItem>
+		<orderItem>
+			<orderItemId>14</orderItemId>
+			<orderItemQty>3</orderItemQty>
+			<orderItemPublisherName>ABC Company</orderItemPublisherName>
+			<orderItemPrice>25.59</orderItemPrice>
+		</orderItem>
+		<orderItem>
+			<orderItemId>15</orderItemId>
+			<orderItemQty>4</orderItemQty>
+			<orderItemPublisherName>Namming</orderItemPublisherName>
+			<orderItemPrice>5.59</orderItemPrice>
+		</orderItem>
+	</orderItems>
+</order>

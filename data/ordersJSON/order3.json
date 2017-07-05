@@ -1,0 +1,32 @@
+{
+    "id": null,
+    "orderDate": 1480454850000,
+    "discount": 0.00,
+    "delivered": false,
+    "promoCode": [],
+    "orderItems": [{
+        "id": null,
+        "quantity": 2,
+        "extPrice": 20.00,
+        "catalogItem": {
+            "id": 23
+        }
+    },
+    {
+        "id": null,
+        "quantity": 5,
+        "extPrice": 68.00,
+        "catalogItem": {
+            "id": 21
+        }
+    }
+    ],
+    "payment": {
+        "id": null,
+        "number": "123456789",
+        "expireMonth": "12",
+        "expireYear": "19",
+        "holderName": "Tester",
+        "paymentType": "EasyPay"
+    }
+}

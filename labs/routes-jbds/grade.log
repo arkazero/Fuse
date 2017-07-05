@@ -1,0 +1,104 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GE: Developing Camel routes with JBDS 1.0
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ routes-jbds ---
+[INFO] Deleting /home/student/jb421/labs/routes-jbds/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ routes-jbds ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0-redhat-1:compile (default-compile) @ routes-jbds ---
+[INFO] Changes detected - recompiling the module!
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ routes-jbds ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/student/jb421/labs/routes-jbds/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0-redhat-1:testCompile (default-testCompile) @ routes-jbds ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/student/jb421/labs/routes-jbds/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.9:test (default-test) @ routes-jbds ---
+[INFO] Surefire report directory: /home/student/jb421/labs/routes-jbds/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.redhat.training.jb421.CBRRouteTest
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/home/student/.m2/repository/org/apache/activemq/activemq-all/5.13.2/activemq-all-5.13.2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/student/.m2/repository/org/slf4j/slf4j-log4j12/1.7.7.redhat-2/slf4j-log4j12-1.7.7.redhat-2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+ INFO | Disabling Camel JMX globally for tests by default.  Use the DisableJMX annotation to override the default setting.
+ INFO | Setting shutdown timeout to [10 SECONDS] on CamelContext with name [_camelContext1].
+ INFO | Enabling auto mocking of endpoints matching pattern [activemq:*] on CamelContext with name [_camelContext1].
+ INFO | Enabling lazy loading of type converters on CamelContext with name [_camelContext1].
+ INFO | Skipping starting CamelContext(s) as UseAdviceWith annotation was found and isUseAdviceWith is set to true.
+ INFO | Apache Camel 2.17.0.redhat-630187 (CamelContext: _camelContext1) is starting
+ INFO | JMX is disabled
+ INFO | Adviced endpoint [activemq://queue:abc] with mock endpoint [mock:activemq:queue:abc]
+ INFO | Adviced endpoint [activemq://queue:orly] with mock endpoint [mock:activemq:queue:orly]
+ INFO | Adviced endpoint [activemq://queue:namming] with mock endpoint [mock:activemq:queue:namming]
+ INFO | AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+ INFO | StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+ INFO | Route: _route1 started and consuming from: Endpoint[file://orders/incoming]
+ INFO | Using Persistence Adapter: MemoryPersistenceAdapter
+ INFO | Apache ActiveMQ 5.13.2 (localhost, ID:workstation.lab.example.com-46426-1499206870904-0:1) is starting
+ INFO | Apache ActiveMQ 5.13.2 (localhost, ID:workstation.lab.example.com-46426-1499206870904-0:1) started
+ INFO | For help or more information please see: http://activemq.apache.org
+ INFO | Connector vm://localhost started
+ INFO | Route: _route2 started and consuming from: Endpoint[activemq://queue:abc]
+ INFO | Route: _route3 started and consuming from: Endpoint[activemq://queue:orly]
+ INFO | Route: _route4 started and consuming from: Endpoint[activemq://queue:namming]
+ INFO | Total 4 routes, of which 4 are started.
+ INFO | Apache Camel 2.17.0.redhat-630187 (CamelContext: _camelContext1) started in 0.670 seconds
+ INFO | Created default XPathFactory com.sun.org.apache.xpath.internal.jaxp.XPathFactoryImpl@61e8cc7f
+ INFO | Delivered order: 1 to ORly Company
+ INFO | Delivered order: 2 to ABC Company
+ INFO | Delivered order: 3 to Namming Company
+ INFO | Delivered order: 4 to ABC Company
+ INFO | Delivered order: 5 to ORly Company
+ INFO | Delivered order: 6 to ABC Company
+ INFO | Asserting: Endpoint[mock://activemq:queue:abc] is satisfied
+ INFO | Asserting: Endpoint[mock://activemq:queue:orly] is satisfied
+ INFO | Asserting: Endpoint[mock://activemq:queue:namming] is satisfied
+ INFO | ********************************************************************************
+ INFO | Testing done: testVendorQueues(com.redhat.training.jb421.CBRRouteTest)
+ INFO | Took: 1.816 seconds (1816 millis)
+ INFO | ********************************************************************************
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.594 sec
+ INFO | Apache ActiveMQ 5.13.2 (localhost, ID:workstation.lab.example.com-46426-1499206870904-0:1) is shutting down
+ INFO | Apache Camel 2.17.0.redhat-630187 (CamelContext: _camelContext1) is shutting down
+ INFO | Starting to graceful shutdown 4 routes (timeout 10 seconds)
+ WARN | Setup of JMS message listener invoker failed for destination 'abc' - trying to recover. Cause: peer (vm://localhost#1) stopped.
+ INFO | Connector vm://localhost stopped
+ WARN | Setup of JMS message listener invoker failed for destination 'namming' - trying to recover. Cause: peer (vm://localhost#5) stopped.
+ INFO | Route: _route4 shutdown complete, was consuming from: Endpoint[activemq://queue:namming]
+ INFO | Apache ActiveMQ 5.13.2 (localhost, ID:workstation.lab.example.com-46426-1499206870904-0:1) uptime 1.447 seconds
+ INFO | Apache ActiveMQ 5.13.2 (localhost, ID:workstation.lab.example.com-46426-1499206870904-0:1) is shutdown
+ WARN | Setup of JMS message listener invoker failed for destination 'orly' - trying to recover. Cause: peer (vm://localhost#3) stopped.
+ INFO | Route: _route3 shutdown complete, was consuming from: Endpoint[activemq://queue:orly]
+ INFO | Route: _route2 shutdown complete, was consuming from: Endpoint[activemq://queue:abc]
+ INFO | Route: _route1 shutdown complete, was consuming from: Endpoint[file://orders/incoming]
+ INFO | Graceful shutdown of 4 routes completed in 0 seconds
+ INFO | Apache Camel 2.17.0.redhat-630187 (CamelContext: _camelContext1) uptime 1.878 seconds
+ INFO | Apache Camel 2.17.0.redhat-630187 (CamelContext: _camelContext1) is shutdown in 0.071 seconds
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 9.470 s
+[INFO] Finished at: 2017-07-04T18:21:12-04:00
+[INFO] Final Memory: 26M/253M
+[INFO] ------------------------------------------------------------------------

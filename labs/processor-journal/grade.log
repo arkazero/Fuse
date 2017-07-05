@@ -1,0 +1,88 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GE: Developing a Camel processor 1.0
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ processor-journal ---
+[INFO] Deleting /home/student/jb421/labs/processor-journal/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ processor-journal ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0-redhat-1:compile (default-compile) @ processor-journal ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/student/jb421/labs/processor-journal/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ processor-journal ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/student/jb421/labs/processor-journal/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0-redhat-1:testCompile (default-testCompile) @ processor-journal ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/student/jb421/labs/processor-journal/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.9:test (default-test) @ processor-journal ---
+[INFO] Surefire report directory: /home/student/jb421/labs/processor-journal/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.redhat.training.jb421.HeaderRouteTest
+[                          main] TestContextManager             INFO  Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+[                          main] XmlBeanDefinitionReader        INFO  Loading XML bean definitions from class path resource [META-INF/spring/camel-context.xml]
+[                          main] DefaultListableBeanFactory     INFO  Overriding bean definition for bean 'fromFiles': replacing [Generic bean: class [org.apache.camel.spring.CamelEndpointFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Generic bean: class [org.apache.camel.spring.CamelEndpointFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+[                          main] CamelSpringTestContextLoader   INFO  Disabling Camel JMX globally for tests by default.  Use the DisableJMX annotation to override the default setting.
+[                          main] GenericApplicationContext      INFO  Refreshing org.springframework.context.support.GenericApplicationContext@c038203: startup date [Tue Jul 04 19:32:12 EDT 2017]; root of context hierarchy
+[                          main] DefaultListableBeanFactory     INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@62833051: defining beans [headerProcessor,fromFiles,template,consumerTemplate,processorContext:beanPostProcessor,processorContext,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+[                          main] CamelSpringTestContextLoader   INFO  Setting shutdown timeout to [10 SECONDS] on CamelContext with name [processorContext].
+[                          main] CamelSpringTestContextLoader   INFO  Enabling lazy loading of type converters on CamelContext with name [processorContext].
+[                          main] CamelSpringTestContextLoader   INFO  Skipping starting CamelContext(s) as UseAdviceWith annotation was found and isUseAdviceWith is set to true.
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: processorContext) is starting
+[                          main] DefaultManagementStrategy      INFO  JMX is disabled
+[                          main] SpringCamelContext             INFO  AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+[                          main] SpringCamelContext             INFO  StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+[                          main] SpringCamelContext             INFO  Route: headerRoute started and consuming from: Endpoint[file://orders/incoming]
+[                          main] SpringCamelContext             INFO  Total 1 routes, of which 1 are started.
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: processorContext) started in 0.083 seconds
+[ad #0 - file://orders/incoming] HeaderProcessor                INFO  Generating the journalFileName header...
+[ad #0 - file://orders/incoming] XPathBuilder                   INFO  Created default XPathFactory com.sun.org.apache.xpath.internal.jaxp.XPathFactoryImpl@3faa158c
+[ad #0 - file://orders/incoming] HeaderProcessor                INFO  orderDateTime: 2016-12-10T12:01:00-05:00
+[ad #0 - file://orders/incoming] HeaderProcessor                INFO  Generating the journalFileName header...
+[ad #0 - file://orders/incoming] HeaderProcessor                INFO  orderDateTime: 2016-12-10T12:02:00-05:00
+[ad #0 - file://orders/incoming] HeaderProcessor                INFO  Generating the journalFileName header...
+[ad #0 - file://orders/incoming] HeaderProcessor                INFO  orderDateTime: 2016-12-10T12:03:00-05:00
+[ad #0 - file://orders/incoming] HeaderProcessor                INFO  Generating the journalFileName header...
+[ad #0 - file://orders/incoming] HeaderProcessor                INFO  orderDateTime: 2016-12-10T12:04:00-05:00
+[ad #0 - file://orders/incoming] HeaderProcessor                INFO  Generating the journalFileName header...
+[ad #0 - file://orders/incoming] HeaderProcessor                INFO  orderDateTime: 2016-12-11T12:05:00-05:00
+[ad #0 - file://orders/incoming] HeaderProcessor                INFO  Generating the journalFileName header...
+[ad #0 - file://orders/incoming] HeaderProcessor                INFO  orderDateTime: 2016-12-11T12:05:00-05:00
+[                          main] HeaderRouteTest                INFO  ********************************************************************************
+[                          main] HeaderRouteTest                INFO  Testing done: testVendorJournalsAndQueues(com.redhat.training.jb421.HeaderRouteTest)
+[                          main] HeaderRouteTest                INFO  Took: 1.380 seconds (1380 millis)
+[                          main] HeaderRouteTest                INFO  ********************************************************************************
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.868 sec
+[                      Thread-1] GenericApplicationContext      INFO  Closing org.springframework.context.support.GenericApplicationContext@c038203: startup date [Tue Jul 04 19:32:12 EDT 2017]; root of context hierarchy
+[                      Thread-1] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: processorContext) is shutting down
+[                      Thread-1] DefaultShutdownStrategy        INFO  Starting to graceful shutdown 1 routes (timeout 10 seconds)
+[text) thread #1 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: headerRoute shutdown complete, was consuming from: Endpoint[file://orders/incoming]
+[                      Thread-1] DefaultShutdownStrategy        INFO  Graceful shutdown of 1 routes completed in 0 seconds
+[                      Thread-1] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: processorContext) uptime 1.395 seconds
+[                      Thread-1] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: processorContext) is shutdown in 0.024 seconds
+[                      Thread-1] DefaultListableBeanFactory     INFO  Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@62833051: defining beans [headerProcessor,fromFiles,template,consumerTemplate,processorContext:beanPostProcessor,processorContext,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 7.998 s
+[INFO] Finished at: 2017-07-04T19:32:14-04:00
+[INFO] Final Memory: 22M/216M
+[INFO] ------------------------------------------------------------------------

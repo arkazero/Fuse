@@ -1,0 +1,94 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GE: Creating a route with the FTP component 1.0
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ route-ftp ---
+[INFO] Deleting /home/student/jb421/labs/route-ftp/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ route-ftp ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0-redhat-1:compile (default-compile) @ route-ftp ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/student/jb421/labs/route-ftp/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ route-ftp ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/student/jb421/labs/route-ftp/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0-redhat-1:testCompile (default-testCompile) @ route-ftp ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/student/jb421/labs/route-ftp/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.9:test (default-test) @ route-ftp ---
+[INFO] Surefire report directory: /home/student/jb421/labs/route-ftp/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.redhat.training.jb421.FTPRouteTest
+[                          main] FTPRouteTest                   INFO  ********************************************************************************
+[                          main] FTPRouteTest                   INFO  Testing: testDroppingOrder(com.redhat.training.jb421.FTPRouteTest)
+[                          main] FTPRouteTest                   INFO  ********************************************************************************
+[                          main] ClassPathXmlApplicationContext INFO  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@d8355a8: startup date [Mon Jul 03 20:27:29 EDT 2017]; root of context hierarchy
+[                          main] XmlBeanDefinitionReader        INFO  Loading XML bean definitions from class path resource [META-INF/spring/bundle-context.xml]
+[                          main] DefaultListableBeanFactory     INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@791d1f8b: defining beans [ftpRouteBuilder,template,consumerTemplate,jb421Context:beanPostProcessor,jb421Context]; root of factory hierarchy
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is starting
+[                          main] ManagedManagementStrategy      INFO  JMX is enabled
+[                          main] DefaultTypeConverter           INFO  Loaded 183 type converters
+[                          main] DefaultRuntimeEndpointRegistry INFO  Runtime endpoint registry is in extended mode gathering usage statistics of all incoming and outgoing endpoints (cache limit: 1000)
+[                          main] SpringCamelContext             INFO  AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+[                          main] SpringCamelContext             INFO  StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+[                          main] SpringCamelContext             INFO  Route: route1 started and consuming from: Endpoint[ftp://infrastructure.lab.example.com?delete=true&include=order.*xml&password=xxxxxx&username=ftpuser1]
+[                          main] SpringCamelContext             INFO  Total 1 routes, of which 1 are started.
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) started in 0.839 seconds
+Upload URL: ftp://ftpuser1:w0rk1n@infrastructure.lab.example.com/order-1.xml;type=i
+File uploaded!
+[infrastructure.lab.example.com] route1                         INFO  New file order-1.xml picked up from infrastructure.lab.example.com
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Body: null
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Headers:
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: breadcrumbId | Value: ID-workstation-lab-example-com-36446-1499128051206-0-1
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFileAbsolute | Value: false
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFileAbsolutePath | Value: order-1.xml
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFileHost | Value: infrastructure.lab.example.com
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFileLastModified | Value: 1499142420000
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFileLength | Value: 261
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFileName | Value: order-1.xml
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFileNameConsumed | Value: order-1.xml
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFileNameOnly | Value: order-1.xml
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFileParent | Value: /
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFilePath | Value: /order-1.xml
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFileRelativePath | Value: order-1.xml
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFtpReplyCode | Value: 226
+[infrastructure.lab.example.com] ExchangePrinter                INFO  Key: CamelFtpReplyString | Value: 226 Transfer complete.
+
+[                          main] FTPRouteTest                   INFO  ********************************************************************************
+[                          main] FTPRouteTest                   INFO  Testing done: testDroppingOrder(com.redhat.training.jb421.FTPRouteTest)
+[                          main] FTPRouteTest                   INFO  Took: 1.061 seconds (1061 millis)
+[                          main] FTPRouteTest                   INFO  ********************************************************************************
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is shutting down
+[                          main] DefaultShutdownStrategy        INFO  Starting to graceful shutdown 1 routes (timeout 10 seconds)
+[text) thread #1 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: route1 shutdown complete, was consuming from: Endpoint[ftp://infrastructure.lab.example.com?delete=true&include=order.*xml&password=xxxxxx&username=ftpuser1]
+[                          main] DefaultShutdownStrategy        INFO  Graceful shutdown of 1 routes completed in 0 seconds
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) uptime 1.932 seconds
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is shutdown in 0.014 seconds
+[                          main] ClassPathXmlApplicationContext INFO  Closing org.springframework.context.support.ClassPathXmlApplicationContext@d8355a8: startup date [Mon Jul 03 20:27:29 EDT 2017]; root of context hierarchy
+[                          main] DefaultListableBeanFactory     INFO  Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@791d1f8b: defining beans [ftpRouteBuilder,template,consumerTemplate,jb421Context:beanPostProcessor,jb421Context]; root of factory hierarchy
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.37 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 8.819 s
+[INFO] Finished at: 2017-07-03T20:27:33-04:00
+[INFO] Final Memory: 22M/213M
+[INFO] ------------------------------------------------------------------------
