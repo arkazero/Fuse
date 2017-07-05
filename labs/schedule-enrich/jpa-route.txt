@@ -1,0 +1,6 @@
+		from("jpa:com.redhat.training.jb421.model.Order?persistenceUnit=mysql"
+				+ "&consumeDelete=false"
+				+ "&consumer.namedQuery=getUndeliveredOrders"
+				+ "&maximumResults=1"
+				+ "&consumer.delay=30000"
+				+ "&consumeLockEntity=false")

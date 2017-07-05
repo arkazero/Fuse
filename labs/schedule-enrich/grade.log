@@ -1,0 +1,139 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GE: Scheduling Routes that Enrich Messages 1.0
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ schedule-enrich ---
+[INFO] Deleting /home/student/jb421/labs/schedule-enrich/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ schedule-enrich ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0-redhat-1:compile (default-compile) @ schedule-enrich ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 15 source files to /home/student/jb421/labs/schedule-enrich/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ schedule-enrich ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0-redhat-1:testCompile (default-testCompile) @ schedule-enrich ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/student/jb421/labs/schedule-enrich/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.9:test (default-test) @ schedule-enrich ---
+[INFO] Surefire report directory: /home/student/jb421/labs/schedule-enrich/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.redhat.training.jb421.EnrichRouteTest
+[                          main] TestContextManager             INFO  Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/web/context/request/RequestAttributes]
+[                          main] XmlBeanDefinitionReader        INFO  Loading XML bean definitions from class path resource [META-INF/spring/bundle-camel-context.xml]
+[                          main] CamelSpringTestContextLoader   INFO  Disabling Camel JMX globally for tests by default.  Use the DisableJMX annotation to override the default setting.
+[                          main] GenericApplicationContext      INFO  Refreshing org.springframework.context.support.GenericApplicationContext@3fee9989: startup date [Wed Jul 05 19:31:22 EDT 2017]; root of context hierarchy
+[                          main] DriverManagerDataSource        INFO  Loaded JDBC driver: com.mysql.jdbc.Driver
+[                          main] tainerEntityManagerFactoryBean INFO  Building JPA container EntityManagerFactory for persistence unit 'mysql'
+[                          main] Version                        INFO  HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+[                          main] Version                        INFO  HHH000412: Hibernate Core {4.2.22.Final-redhat-1}
+[                          main] Environment                    INFO  HHH000206: hibernate.properties not found
+[                          main] Environment                    INFO  HHH000021: Bytecode provider name : javassist
+[                          main] Ejb3Configuration              INFO  HHH000204: Processing PersistenceUnitInfo [
+	name: mysql
+	...]
+[                          main] ConnectionProviderInitiator    INFO  HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+[                          main] Dialect                        INFO  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[                          main] LobCreatorBuilder              INFO  HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+[                          main] TransactionFactoryInitiator    INFO  HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+[                          main] ASTQueryTranslatorFactory      INFO  HHH000397: Using ASTQueryTranslatorFactory
+[                          main] Version                        INFO  HV000001: Hibernate Validator 5.0.3.Final
+[                          main] DefaultListableBeanFactory     INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5495333e: defining beans [enrichRouteBuilder,template,consumerTemplate,jb421Context:beanPostProcessor,jb421Context,mysqlDataSource,entityManagerFactory,transactionManager,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+[                          main] CamelSpringTestContextLoader   INFO  Setting shutdown timeout to [10 SECONDS] on CamelContext with name [jb421Context].
+[                          main] CamelSpringTestContextLoader   INFO  Enabling lazy loading of type converters on CamelContext with name [jb421Context].
+[                          main] CamelSpringTestContextLoader   INFO  Skipping starting CamelContext(s) as UseAdviceWith annotation was found and isUseAdviceWith is set to true.
+Output from Server .... 
+
+!!com.redhat.training.domain.Order
+customer:
+  admin: false
+  billingAddress: {city: Testville, country: USA, postalCode: '22304', state: MD,
+    streetAddress1: 123 Test St, streetAddress2: '', streetAddress3: ''}
+  email: guest@doe.com
+  firstName: Guest
+  lastName: User
+  password: user
+  shippingAddress: {city: Testville, country: USA, postalCode: '22304', state: MD,
+    streetAddress1: 123 Test St, streetAddress2: '', streetAddress3: ''}
+  username: guest
+delivered: false
+discount: 0.00
+orderDate: 2016-11-29T21:27:30Z
+payment: {expireMonth: '12', expireYear: '19', holderName: Tester, number: '123456789',
+  paymentType: EasyPay}
+promoCode: !!set {}
+Output from Server .... 
+
+!!com.redhat.training.domain.Order
+customer:
+  admin: false
+  billingAddress: {city: Testville, country: USA, postalCode: '22304', state: MD,
+    streetAddress1: 123 Test St, streetAddress2: '', streetAddress3: ''}
+  email: guest@doe.com
+  firstName: Guest
+  lastName: User
+  password: user
+  shippingAddress: {city: Testville, country: USA, postalCode: '22304', state: MD,
+    streetAddress1: 123 Test St, streetAddress2: '', streetAddress3: ''}
+  username: guest
+delivered: false
+discount: 0.00
+orderDate: 2016-11-29T21:27:30Z
+payment: {expireMonth: '12', expireYear: '19', holderName: Tester, number: '123456789',
+  paymentType: EasyPay}
+promoCode: !!set {}
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is starting
+[                          main] DefaultManagementStrategy      INFO  JMX is disabled
+[                          main] JpaComponent                   INFO  Using EntityManagerFactory found in registry with id [entityManagerFactory] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean@76889e60
+[                          main] JpaComponent                   INFO  Using TransactionManager found in registry with id [transactionManager] org.springframework.orm.jpa.JpaTransactionManager@706fe5c6
+[                          main] SpringCamelContext             INFO  AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+[                          main] SpringCamelContext             INFO  StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+[                          main] SpringCamelContext             INFO  Route: route1 started and consuming from: Endpoint[jpa://com.redhat.training.jb421.model.Order?consumeDelete=false&consumeLockEntity=false&consumer.delay=30000&consumer.namedQuery=getUndeliveredOrders&maximumResults=1&persistenceUnit=mysql]
+[                          main] SpringCamelContext             INFO  Route: route2 started and consuming from: Endpoint[direct://enrichOrder]
+[                          main] SpringCamelContext             INFO  Route: route3 started and consuming from: Endpoint[direct://updateOrder]
+[                          main] SpringCamelContext             INFO  Total 3 routes, of which 3 are started.
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) started in 1.072 seconds
+[hat.training.jb421.model.Order] route1                         INFO  Order sent to fulfillemnt: Order [id=52, orderDate=2016-11-29 16:27:30.0, discount=0.00, delivered=false, customer=Customer [id=36, firstName=Guest, lastName=User, username=guest, password=user, email=guest@doe.com, admin=false, billingAddress=null, shippingAddress=null], promoCode=[], orderItems=[OrderItem [id=54, quantity=1, extPrice=200.00, catalogItem=CatalogItem [id=21, sku=45692, title=Authentic Police Cases, price=200.00, description=expensive sucker, author=Unknown, imagePath=/images/books/PoliceCases.jpg, category=comics, newItem=false, publisher=Publisher [id=2, email=admin@booksinc.com, name=Books Incorporated, address=null]], vendorId=null, sku=null]], payment=Payment [id=53, number=123456789, expireMonth=12, expireYear=19, holderName=Tester, paymentType=EasyPay], dateFulfilled=null, fulfilledBy=null]
+[                          main] MockEndpoint                   INFO  Asserting: Endpoint[mock://fulfillmentSystem] is satisfied
+[hat.training.jb421.model.Order] route1                         INFO  Order sent to fulfillemnt: Order [id=58, orderDate=2016-11-29 16:27:30.0, discount=0.00, delivered=false, customer=Customer [id=36, firstName=Guest, lastName=User, username=guest, password=user, email=guest@doe.com, admin=false, billingAddress=null, shippingAddress=null], promoCode=[], orderItems=[OrderItem [id=60, quantity=1, extPrice=200.00, catalogItem=CatalogItem [id=21, sku=45692, title=Authentic Police Cases, price=200.00, description=expensive sucker, author=Unknown, imagePath=/images/books/PoliceCases.jpg, category=comics, newItem=false, publisher=Publisher [id=2, email=admin@booksinc.com, name=Books Incorporated, address=null]], vendorId=null, sku=null]], payment=Payment [id=59, number=123456789, expireMonth=12, expireYear=19, holderName=Tester, paymentType=EasyPay], dateFulfilled=null, fulfilledBy=null]
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is shutting down
+[                          main] DefaultShutdownStrategy        INFO  Starting to graceful shutdown 3 routes (timeout 10 seconds)
+[text) thread #3 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: route3 shutdown complete, was consuming from: Endpoint[direct://updateOrder]
+[text) thread #3 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: route2 shutdown complete, was consuming from: Endpoint[direct://enrichOrder]
+[text) thread #3 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: route1 shutdown complete, was consuming from: Endpoint[jpa://com.redhat.training.jb421.model.Order?consumeDelete=false&consumeLockEntity=false&consumer.delay=30000&consumer.namedQuery=getUndeliveredOrders&maximumResults=1&persistenceUnit=mysql]
+[                          main] DefaultShutdownStrategy        INFO  Graceful shutdown of 3 routes completed in 0 seconds
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) uptime 42.098 seconds
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is shutdown in 0.020 seconds
+[                          main] EnrichRouteTest                INFO  ********************************************************************************
+[                          main] EnrichRouteTest                INFO  Testing done: testFulfillingOrders(com.redhat.training.jb421.EnrichRouteTest)
+[                          main] EnrichRouteTest                INFO  Took: 42.292 seconds (42292 millis)
+[                          main] EnrichRouteTest                INFO  ********************************************************************************
+[                          main] GenericApplicationContext      INFO  Closing org.springframework.context.support.GenericApplicationContext@3fee9989: startup date [Wed Jul 05 19:31:22 EDT 2017]; root of context hierarchy
+[                          main] DefaultListableBeanFactory     INFO  Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5495333e: defining beans [enrichRouteBuilder,template,consumerTemplate,jb421Context:beanPostProcessor,jb421Context,mysqlDataSource,entityManagerFactory,transactionManager,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+[                          main] tainerEntityManagerFactoryBean INFO  Closing JPA EntityManagerFactory for persistence unit 'mysql'
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 47.878 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 53.711 s
+[INFO] Finished at: 2017-07-05T19:32:08-04:00
+[INFO] Final Memory: 26M/253M
+[INFO] ------------------------------------------------------------------------
