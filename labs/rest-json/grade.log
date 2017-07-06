@@ -1,0 +1,204 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GE: Implementing a REST Service with a JSON Payload 1.0
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ rest-json ---
+[INFO] Deleting /home/student/jb421/labs/rest-json/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ rest-json ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0-redhat-1:compile (default-compile) @ rest-json ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to /home/student/jb421/labs/rest-json/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ rest-json ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0-redhat-1:testCompile (default-testCompile) @ rest-json ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/student/jb421/labs/rest-json/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.9:test (default-test) @ rest-json ---
+[INFO] Surefire report directory: /home/student/jb421/labs/rest-json/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.redhat.training.jb421.RestOrderRouteTest
+2017-07-06 16:58:59,433 [main           ] INFO  TestContextManager             - Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/web/context/request/RequestAttributes]
+2017-07-06 16:58:59,571 [main           ] INFO  XmlBeanDefinitionReader        - Loading XML bean definitions from class path resource [META-INF/spring/bundle-camel-context.xml]
+2017-07-06 16:59:01,086 [main           ] INFO  CamelSpringTestContextLoader   - Disabling Camel JMX globally for tests by default.  Use the DisableJMX annotation to override the default setting.
+2017-07-06 16:59:01,115 [main           ] INFO  GenericApplicationContext      - Refreshing org.springframework.context.support.GenericApplicationContext@4e9ba398: startup date [Thu Jul 06 16:59:01 EDT 2017]; root of context hierarchy
+2017-07-06 16:59:01,376 [main           ] INFO  DriverManagerDataSource        - Loaded JDBC driver: com.mysql.jdbc.Driver
+2017-07-06 16:59:01,429 [main           ] INFO  tainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'mysql'
+2017-07-06 16:59:01,646 [main           ] INFO  Version                        - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2017-07-06 16:59:01,654 [main           ] INFO  Version                        - HHH000412: Hibernate Core {4.2.22.Final-redhat-1}
+2017-07-06 16:59:01,657 [main           ] INFO  Environment                    - HHH000206: hibernate.properties not found
+2017-07-06 16:59:01,659 [main           ] INFO  Environment                    - HHH000021: Bytecode provider name : javassist
+2017-07-06 16:59:01,689 [main           ] INFO  Ejb3Configuration              - HHH000204: Processing PersistenceUnitInfo [
+	name: mysql
+	...]
+2017-07-06 16:59:02,008 [main           ] INFO  ConnectionProviderInitiator    - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2017-07-06 16:59:02,318 [main           ] INFO  Dialect                        - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-07-06 16:59:02,330 [main           ] INFO  LobCreatorBuilder              - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+2017-07-06 16:59:02,514 [main           ] INFO  TransactionFactoryInitiator    - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2017-07-06 16:59:02,522 [main           ] INFO  ASTQueryTranslatorFactory      - HHH000397: Using ASTQueryTranslatorFactory
+2017-07-06 16:59:02,612 [main           ] INFO  Version                        - HV000001: Hibernate Validator 5.0.3.Final
+2017-07-06 16:59:03,572 [main           ] INFO  DefaultListableBeanFactory     - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@7fbdb894: defining beans [orderRouteBuilder,template,consumerTemplate,jb421Context:beanPostProcessor,jb421Context,mysqlDataSource,entityManagerFactory,transactionManager,jsonProvider,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+2017-07-06 16:59:04,020 [main           ] INFO  CamelSpringTestContextLoader   - Setting shutdown timeout to [10 SECONDS] on CamelContext with name [jb421Context].
+2017-07-06 16:59:04,023 [main           ] INFO  CamelSpringTestContextLoader   - Enabling lazy loading of type converters on CamelContext with name [jb421Context].
+2017-07-06 16:59:04,023 [main           ] INFO  CamelSpringTestContextLoader   - Skipping starting CamelContext(s) as UseAdviceWith annotation was found and isUseAdviceWith is set to true.
+2017-07-06 16:59:04,334 [main           ] INFO  SpringCamelContext             - Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is starting
+2017-07-06 16:59:04,336 [main           ] INFO  DefaultManagementStrategy      - JMX is disabled
+2017-07-06 16:59:05,006 [main           ] INFO  SpringCamelContext             - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+2017-07-06 16:59:05,007 [main           ] INFO  SpringCamelContext             - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+2017-07-06 16:59:05,294 [main           ] INFO  ServerImpl                     - Setting the server's publish address to be http://localhost:8080
+2017-07-06 16:59:05,385 [main           ] INFO  log                            - Logging initialized @6734ms
+2017-07-06 16:59:05,457 [main           ] INFO  Server                         - jetty-9.2.19.v20160908
+2017-07-06 16:59:05,513 [main           ] WARN  AbstractHandler                - No Server set for org.apache.cxf.transport.http_jetty.JettyHTTPServerEngine$1@11b32a14
+2017-07-06 16:59:05,539 [main           ] INFO  ServerConnector                - Started ServerConnector@75cf0de5{HTTP/1.1}{localhost:8080}
+2017-07-06 16:59:05,540 [main           ] INFO  Server                         - Started @6888ms
+2017-07-06 16:59:05,567 [main           ] WARN  ContextHandler                 - Empty contextPath
+2017-07-06 16:59:05,593 [main           ] INFO  ContextHandler                 - Started o.e.j.s.h.ContextHandler@1ff15a50{/,null,AVAILABLE}
+2017-07-06 16:59:05,598 [main           ] INFO  SpringCamelContext             - Route: route1 started and consuming from: Endpoint[cxfrs://http://localhost:8080?bindingStyle=SimpleConsumer&provider=jsonProvider&resourceClasses=com.redhat.training.jb421.RestOrderService]
+2017-07-06 16:59:05,599 [main           ] INFO  SpringCamelContext             - Route: route2 started and consuming from: Endpoint[direct://createOrder]
+2017-07-06 16:59:05,599 [main           ] INFO  SpringCamelContext             - Route: route3 started and consuming from: Endpoint[direct://updateOrder]
+2017-07-06 16:59:05,600 [main           ] INFO  SpringCamelContext             - Route: route4 started and consuming from: Endpoint[direct://cancelOrder]
+2017-07-06 16:59:05,600 [main           ] INFO  SpringCamelContext             - Total 4 routes, of which 4 are started.
+2017-07-06 16:59:05,603 [main           ] INFO  SpringCamelContext             - Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) started in 1.267 seconds
+2017-07-06 16:59:05,913 [tp2049620066-17] INFO  route2                         - Creating new order with id 1
+2017-07-06 16:59:06,639 [main           ] INFO  RestOrderRouteTest             - ********************************************************************************
+2017-07-06 16:59:06,639 [main           ] INFO  RestOrderRouteTest             - Testing done: testCreateOrder(com.redhat.training.jb421.RestOrderRouteTest)
+2017-07-06 16:59:06,640 [main           ] INFO  RestOrderRouteTest             - Took: 2.601 seconds (2601 millis)
+2017-07-06 16:59:06,640 [main           ] INFO  RestOrderRouteTest             - ********************************************************************************
+2017-07-06 16:59:06,640 [main           ] INFO  GenericApplicationContext      - Closing org.springframework.context.support.GenericApplicationContext@4e9ba398: startup date [Thu Jul 06 16:59:01 EDT 2017]; root of context hierarchy
+2017-07-06 16:59:06,640 [main           ] INFO  SpringCamelContext             - Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is shutting down
+2017-07-06 16:59:06,644 [main           ] INFO  DefaultShutdownStrategy        - Starting to graceful shutdown 4 routes (timeout 10 seconds)
+2017-07-06 16:59:06,652 [ - ShutdownTask] INFO  ContextHandler                 - Stopped o.e.j.s.h.ContextHandler@1ff15a50{/,null,UNAVAILABLE}
+2017-07-06 16:59:06,654 [ - ShutdownTask] INFO  DefaultShutdownStrategy        - Route: route1 shutdown complete, was consuming from: Endpoint[cxfrs://http://localhost:8080?bindingStyle=SimpleConsumer&provider=jsonProvider&resourceClasses=com.redhat.training.jb421.RestOrderService]
+2017-07-06 16:59:06,657 [ - ShutdownTask] INFO  DefaultShutdownStrategy        - Route: route4 shutdown complete, was consuming from: Endpoint[direct://cancelOrder]
+2017-07-06 16:59:06,662 [ - ShutdownTask] INFO  DefaultShutdownStrategy        - Route: route3 shutdown complete, was consuming from: Endpoint[direct://updateOrder]
+2017-07-06 16:59:06,663 [ - ShutdownTask] INFO  DefaultShutdownStrategy        - Route: route2 shutdown complete, was consuming from: Endpoint[direct://createOrder]
+2017-07-06 16:59:06,664 [main           ] INFO  DefaultShutdownStrategy        - Graceful shutdown of 4 routes completed in 0 seconds
+2017-07-06 16:59:06,668 [main           ] INFO  SpringCamelContext             - Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) uptime 2.335 seconds
+2017-07-06 16:59:06,669 [main           ] INFO  SpringCamelContext             - Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is shutdown in 0.028 seconds
+2017-07-06 16:59:06,669 [main           ] INFO  DefaultListableBeanFactory     - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@7fbdb894: defining beans [orderRouteBuilder,template,consumerTemplate,jb421Context:beanPostProcessor,jb421Context,mysqlDataSource,entityManagerFactory,transactionManager,jsonProvider,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+2017-07-06 16:59:06,679 [main           ] INFO  tainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'mysql'
+2017-07-06 16:59:06,683 [main           ] INFO  XmlBeanDefinitionReader        - Loading XML bean definitions from class path resource [META-INF/spring/bundle-camel-context.xml]
+2017-07-06 16:59:07,151 [main           ] INFO  CamelSpringTestContextLoader   - Disabling Camel JMX globally for tests by default.  Use the DisableJMX annotation to override the default setting.
+2017-07-06 16:59:07,151 [main           ] INFO  GenericApplicationContext      - Refreshing org.springframework.context.support.GenericApplicationContext@2abc8034: startup date [Thu Jul 06 16:59:07 EDT 2017]; root of context hierarchy
+2017-07-06 16:59:07,166 [main           ] INFO  DriverManagerDataSource        - Loaded JDBC driver: com.mysql.jdbc.Driver
+2017-07-06 16:59:07,170 [main           ] INFO  tainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'mysql'
+2017-07-06 16:59:07,170 [main           ] INFO  Ejb3Configuration              - HHH000204: Processing PersistenceUnitInfo [
+	name: mysql
+	...]
+2017-07-06 16:59:07,181 [main           ] INFO  ConnectionProviderInitiator    - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2017-07-06 16:59:07,199 [main           ] INFO  Dialect                        - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-07-06 16:59:07,199 [main           ] INFO  LobCreatorBuilder              - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+2017-07-06 16:59:07,206 [main           ] INFO  TransactionFactoryInitiator    - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2017-07-06 16:59:07,207 [main           ] INFO  ASTQueryTranslatorFactory      - HHH000397: Using ASTQueryTranslatorFactory
+2017-07-06 16:59:07,252 [main           ] INFO  DefaultListableBeanFactory     - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@422ad5e2: defining beans [orderRouteBuilder,template,consumerTemplate,jb421Context:beanPostProcessor,jb421Context,mysqlDataSource,entityManagerFactory,transactionManager,jsonProvider,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+2017-07-06 16:59:07,267 [main           ] INFO  CamelSpringTestContextLoader   - Setting shutdown timeout to [10 SECONDS] on CamelContext with name [jb421Context].
+2017-07-06 16:59:07,268 [main           ] INFO  CamelSpringTestContextLoader   - Enabling lazy loading of type converters on CamelContext with name [jb421Context].
+2017-07-06 16:59:07,268 [main           ] INFO  CamelSpringTestContextLoader   - Skipping starting CamelContext(s) as UseAdviceWith annotation was found and isUseAdviceWith is set to true.
+2017-07-06 16:59:07,293 [main           ] INFO  SpringCamelContext             - Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is starting
+2017-07-06 16:59:07,294 [main           ] INFO  DefaultManagementStrategy      - JMX is disabled
+2017-07-06 16:59:07,345 [main           ] INFO  SpringCamelContext             - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+2017-07-06 16:59:07,346 [main           ] INFO  SpringCamelContext             - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+2017-07-06 16:59:07,354 [main           ] INFO  ServerImpl                     - Setting the server's publish address to be http://localhost:8080
+2017-07-06 16:59:07,369 [main           ] WARN  ContextHandler                 - Empty contextPath
+2017-07-06 16:59:07,370 [main           ] INFO  ContextHandler                 - Started o.e.j.s.h.ContextHandler@6dca31eb{/,null,AVAILABLE}
+2017-07-06 16:59:07,371 [main           ] INFO  SpringCamelContext             - Route: route5 started and consuming from: Endpoint[cxfrs://http://localhost:8080?bindingStyle=SimpleConsumer&provider=jsonProvider&resourceClasses=com.redhat.training.jb421.RestOrderService]
+2017-07-06 16:59:07,371 [main           ] INFO  SpringCamelContext             - Route: route6 started and consuming from: Endpoint[direct://createOrder]
+2017-07-06 16:59:07,371 [main           ] INFO  SpringCamelContext             - Route: route7 started and consuming from: Endpoint[direct://updateOrder]
+2017-07-06 16:59:07,372 [main           ] INFO  SpringCamelContext             - Route: route8 started and consuming from: Endpoint[direct://cancelOrder]
+2017-07-06 16:59:07,372 [main           ] INFO  SpringCamelContext             - Total 4 routes, of which 4 are started.
+2017-07-06 16:59:07,372 [main           ] INFO  SpringCamelContext             - Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) started in 0.079 seconds
+2017-07-06 16:59:07,385 [tp2049620066-18] INFO  route6                         - Creating new order with id 1
+2017-07-06 16:59:07,452 [tp2049620066-19] INFO  route8                         - Canceling order with id 1
+2017-07-06 16:59:07,494 [main           ] INFO  RestOrderRouteTest             - ********************************************************************************
+2017-07-06 16:59:07,494 [main           ] INFO  RestOrderRouteTest             - Testing done: testDelete(com.redhat.training.jb421.RestOrderRouteTest)
+2017-07-06 16:59:07,494 [main           ] INFO  RestOrderRouteTest             - Took: 0.225 seconds (225 millis)
+2017-07-06 16:59:07,495 [main           ] INFO  RestOrderRouteTest             - ********************************************************************************
+2017-07-06 16:59:07,495 [main           ] INFO  GenericApplicationContext      - Closing org.springframework.context.support.GenericApplicationContext@2abc8034: startup date [Thu Jul 06 16:59:07 EDT 2017]; root of context hierarchy
+2017-07-06 16:59:07,495 [main           ] INFO  SpringCamelContext             - Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is shutting down
+2017-07-06 16:59:07,495 [main           ] INFO  DefaultShutdownStrategy        - Starting to graceful shutdown 4 routes (timeout 10 seconds)
+2017-07-06 16:59:07,502 [ - ShutdownTask] INFO  ContextHandler                 - Stopped o.e.j.s.h.ContextHandler@6dca31eb{/,null,UNAVAILABLE}
+2017-07-06 16:59:07,504 [ - ShutdownTask] INFO  DefaultShutdownStrategy        - Route: route5 shutdown complete, was consuming from: Endpoint[cxfrs://http://localhost:8080?bindingStyle=SimpleConsumer&provider=jsonProvider&resourceClasses=com.redhat.training.jb421.RestOrderService]
+2017-07-06 16:59:07,505 [ - ShutdownTask] INFO  DefaultShutdownStrategy        - Route: route8 shutdown complete, was consuming from: Endpoint[direct://cancelOrder]
+2017-07-06 16:59:07,506 [ - ShutdownTask] INFO  DefaultShutdownStrategy        - Route: route7 shutdown complete, was consuming from: Endpoint[direct://updateOrder]
+2017-07-06 16:59:07,506 [ - ShutdownTask] INFO  DefaultShutdownStrategy        - Route: route6 shutdown complete, was consuming from: Endpoint[direct://createOrder]
+2017-07-06 16:59:07,506 [main           ] INFO  DefaultShutdownStrategy        - Graceful shutdown of 4 routes completed in 0 seconds
+2017-07-06 16:59:07,509 [main           ] INFO  SpringCamelContext             - Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) uptime 0.216 seconds
+2017-07-06 16:59:07,510 [main           ] INFO  SpringCamelContext             - Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is shutdown in 0.014 seconds
+2017-07-06 16:59:07,510 [main           ] INFO  DefaultListableBeanFactory     - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@422ad5e2: defining beans [orderRouteBuilder,template,consumerTemplate,jb421Context:beanPostProcessor,jb421Context,mysqlDataSource,entityManagerFactory,transactionManager,jsonProvider,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+2017-07-06 16:59:07,513 [main           ] INFO  tainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'mysql'
+2017-07-06 16:59:07,516 [main           ] INFO  XmlBeanDefinitionReader        - Loading XML bean definitions from class path resource [META-INF/spring/bundle-camel-context.xml]
+2017-07-06 16:59:08,082 [main           ] INFO  CamelSpringTestContextLoader   - Disabling Camel JMX globally for tests by default.  Use the DisableJMX annotation to override the default setting.
+2017-07-06 16:59:08,082 [main           ] INFO  GenericApplicationContext      - Refreshing org.springframework.context.support.GenericApplicationContext@59845579: startup date [Thu Jul 06 16:59:08 EDT 2017]; root of context hierarchy
+2017-07-06 16:59:08,097 [main           ] INFO  DriverManagerDataSource        - Loaded JDBC driver: com.mysql.jdbc.Driver
+2017-07-06 16:59:08,100 [main           ] INFO  tainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'mysql'
+2017-07-06 16:59:08,101 [main           ] INFO  Ejb3Configuration              - HHH000204: Processing PersistenceUnitInfo [
+	name: mysql
+	...]
+2017-07-06 16:59:08,105 [main           ] INFO  ConnectionProviderInitiator    - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2017-07-06 16:59:08,119 [main           ] INFO  Dialect                        - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-07-06 16:59:08,119 [main           ] INFO  LobCreatorBuilder              - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+2017-07-06 16:59:08,126 [main           ] INFO  TransactionFactoryInitiator    - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2017-07-06 16:59:08,127 [main           ] INFO  ASTQueryTranslatorFactory      - HHH000397: Using ASTQueryTranslatorFactory
+2017-07-06 16:59:08,154 [main           ] INFO  DefaultListableBeanFactory     - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@113f9078: defining beans [orderRouteBuilder,template,consumerTemplate,jb421Context:beanPostProcessor,jb421Context,mysqlDataSource,entityManagerFactory,transactionManager,jsonProvider,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+2017-07-06 16:59:08,168 [main           ] INFO  CamelSpringTestContextLoader   - Setting shutdown timeout to [10 SECONDS] on CamelContext with name [jb421Context].
+2017-07-06 16:59:08,168 [main           ] INFO  CamelSpringTestContextLoader   - Enabling lazy loading of type converters on CamelContext with name [jb421Context].
+2017-07-06 16:59:08,168 [main           ] INFO  CamelSpringTestContextLoader   - Skipping starting CamelContext(s) as UseAdviceWith annotation was found and isUseAdviceWith is set to true.
+2017-07-06 16:59:08,183 [main           ] INFO  SpringCamelContext             - Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is starting
+2017-07-06 16:59:08,183 [main           ] INFO  DefaultManagementStrategy      - JMX is disabled
+2017-07-06 16:59:08,235 [main           ] INFO  SpringCamelContext             - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+2017-07-06 16:59:08,235 [main           ] INFO  SpringCamelContext             - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+2017-07-06 16:59:08,237 [main           ] INFO  ServerImpl                     - Setting the server's publish address to be http://localhost:8080
+2017-07-06 16:59:08,249 [main           ] WARN  ContextHandler                 - Empty contextPath
+2017-07-06 16:59:08,250 [main           ] INFO  ContextHandler                 - Started o.e.j.s.h.ContextHandler@111c229c{/,null,AVAILABLE}
+2017-07-06 16:59:08,250 [main           ] INFO  SpringCamelContext             - Route: route9 started and consuming from: Endpoint[cxfrs://http://localhost:8080?bindingStyle=SimpleConsumer&provider=jsonProvider&resourceClasses=com.redhat.training.jb421.RestOrderService]
+2017-07-06 16:59:08,251 [main           ] INFO  SpringCamelContext             - Route: route10 started and consuming from: Endpoint[direct://createOrder]
+2017-07-06 16:59:08,251 [main           ] INFO  SpringCamelContext             - Route: route11 started and consuming from: Endpoint[direct://updateOrder]
+2017-07-06 16:59:08,251 [main           ] INFO  SpringCamelContext             - Route: route12 started and consuming from: Endpoint[direct://cancelOrder]
+2017-07-06 16:59:08,252 [main           ] INFO  SpringCamelContext             - Total 4 routes, of which 4 are started.
+2017-07-06 16:59:08,252 [main           ] INFO  SpringCamelContext             - Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) started in 0.069 seconds
+2017-07-06 16:59:08,270 [tp2049620066-20] INFO  route10                        - Creating new order with id 1
+2017-07-06 16:59:08,408 [tp2049620066-21] INFO  route11                        - Updating order with id 1 to add order item OrderItem [id=1, quantity=2, extPrice=3.99]
+2017-07-06 16:59:08,574 [main           ] INFO  RestOrderRouteTest             - ********************************************************************************
+2017-07-06 16:59:08,574 [main           ] INFO  RestOrderRouteTest             - Testing done: testUpdate(com.redhat.training.jb421.RestOrderRouteTest)
+2017-07-06 16:59:08,575 [main           ] INFO  RestOrderRouteTest             - Took: 0.405 seconds (405 millis)
+2017-07-06 16:59:08,575 [main           ] INFO  RestOrderRouteTest             - ********************************************************************************
+2017-07-06 16:59:08,575 [main           ] INFO  GenericApplicationContext      - Closing org.springframework.context.support.GenericApplicationContext@59845579: startup date [Thu Jul 06 16:59:08 EDT 2017]; root of context hierarchy
+2017-07-06 16:59:08,575 [main           ] INFO  SpringCamelContext             - Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is shutting down
+2017-07-06 16:59:08,576 [main           ] INFO  DefaultShutdownStrategy        - Starting to graceful shutdown 4 routes (timeout 10 seconds)
+2017-07-06 16:59:08,577 [ - ShutdownTask] INFO  ContextHandler                 - Stopped o.e.j.s.h.ContextHandler@111c229c{/,null,UNAVAILABLE}
+2017-07-06 16:59:08,577 [ - ShutdownTask] INFO  DefaultShutdownStrategy        - Route: route9 shutdown complete, was consuming from: Endpoint[cxfrs://http://localhost:8080?bindingStyle=SimpleConsumer&provider=jsonProvider&resourceClasses=com.redhat.training.jb421.RestOrderService]
+2017-07-06 16:59:08,578 [ - ShutdownTask] INFO  DefaultShutdownStrategy        - Route: route12 shutdown complete, was consuming from: Endpoint[direct://cancelOrder]
+2017-07-06 16:59:08,578 [ - ShutdownTask] INFO  DefaultShutdownStrategy        - Route: route11 shutdown complete, was consuming from: Endpoint[direct://updateOrder]
+2017-07-06 16:59:08,578 [ - ShutdownTask] INFO  DefaultShutdownStrategy        - Route: route10 shutdown complete, was consuming from: Endpoint[direct://createOrder]
+2017-07-06 16:59:08,578 [main           ] INFO  DefaultShutdownStrategy        - Graceful shutdown of 4 routes completed in 0 seconds
+2017-07-06 16:59:08,581 [main           ] INFO  SpringCamelContext             - Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) uptime 0.398 seconds
+2017-07-06 16:59:08,581 [main           ] INFO  SpringCamelContext             - Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is shutdown in 0.005 seconds
+2017-07-06 16:59:08,581 [main           ] INFO  DefaultListableBeanFactory     - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@113f9078: defining beans [orderRouteBuilder,template,consumerTemplate,jb421Context:beanPostProcessor,jb421Context,mysqlDataSource,entityManagerFactory,transactionManager,jsonProvider,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+2017-07-06 16:59:08,582 [main           ] INFO  tainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'mysql'
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.485 sec
+
+Results :
+
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 15.540 s
+[INFO] Finished at: 2017-07-06T16:59:08-04:00
+[INFO] Final Memory: 32M/258M
+[INFO] ------------------------------------------------------------------------
