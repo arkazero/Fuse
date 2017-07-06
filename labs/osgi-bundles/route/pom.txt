@@ -1,0 +1,7 @@
+
+    <dependency>
+      <groupId>com.redhat.training.jb421</groupId>
+      <artifactId>osgi-bundles-bean</artifactId>
+      <version>1.0</version>
+    </dependency>
+
