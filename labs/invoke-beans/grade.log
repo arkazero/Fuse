@@ -1,0 +1,154 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Demo: Invoking beans in routes 1.0
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ invoke-beans ---
+[INFO] Deleting /home/student/jb421/labs/invoke-beans/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ invoke-beans ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0-redhat-1:compile (default-compile) @ invoke-beans ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /home/student/jb421/labs/invoke-beans/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ invoke-beans ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/student/jb421/labs/invoke-beans/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0-redhat-1:testCompile (default-testCompile) @ invoke-beans ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/student/jb421/labs/invoke-beans/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.9:test (default-test) @ invoke-beans ---
+[INFO] Surefire report directory: /home/student/jb421/labs/invoke-beans/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.redhat.training.jb421.RouteTranformationTest
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/home/student/.m2/repository/org/slf4j/slf4j-log4j12/1.7.7.redhat-2/slf4j-log4j12-1.7.7.redhat-2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/student/.m2/repository/org/apache/activemq/activemq-all/5.13.2/activemq-all-5.13.2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+[                          main] TestContextManager             INFO  Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+[                          main] XmlBeanDefinitionReader        INFO  Loading XML bean definitions from class path resource [META-INF/spring/bundle-context.xml]
+[                          main] CamelSpringTestContextLoader   INFO  Disabling Camel JMX globally for tests by default.  Use the DisableJMX annotation to override the default setting.
+[                          main] GenericApplicationContext      INFO  Refreshing org.springframework.context.support.GenericApplicationContext@887af79: startup date [Wed Jul 05 20:42:48 EDT 2017]; root of context hierarchy
+[                          main] redAnnotationBeanPostProcessor INFO  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[                          main] DefaultListableBeanFactory     INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@63eef88a: defining beans [orderRouteBuilder,bodyTransformBean,destinationBean,template,consumerTemplate,jb421Context:beanPostProcessor,jb421Context,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+[                          main] CamelSpringTestContextLoader   INFO  Setting shutdown timeout to [10 SECONDS] on CamelContext with name [jb421Context].
+[                          main] CamelSpringTestContextLoader   INFO  Enabling lazy loading of type converters on CamelContext with name [jb421Context].
+[                          main] CamelSpringTestContextLoader   INFO  Skipping starting CamelContext(s) as UseAdviceWith annotation was found and isUseAdviceWith is set to true.
+[                          main] RouteDefinition                INFO  AdviceWith route after: Route(transformChars)[[From[direct:transformChars]] -> [InterceptSendToEndpoint[direct:transformChars -> [To[mock:direct:transformChars]]], To[bean://bodyTransformBean?method=replaceNonASCIIWithQuestionMark], To[direct:recipientList]]]
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is starting
+[                          main] DefaultManagementStrategy      INFO  JMX is disabled
+[                          main] SpringCamelContext             INFO  AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+[                          main] SpringCamelContext             INFO  StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+[                          main] SpringCamelContext             INFO  Route: transformChars started and consuming from: Endpoint[direct://transformChars]
+[                          main] SpringCamelContext             INFO  Route: transformComma started and consuming from: Endpoint[file://origin]
+[                          main] SpringCamelContext             INFO  Route: recipientList started and consuming from: Endpoint[direct://recipientList]
+[                          main] SpringCamelContext             INFO  Total 3 routes, of which 3 are started.
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) started in 0.162 seconds
+[                          main] MockEndpoint                   INFO  Asserting: Endpoint[mock://direct:transformChars] is satisfied
+[                          main] RouteTranformationTest         INFO  ********************************************************************************
+[                          main] RouteTranformationTest         INFO  Testing done: testRouteWithComma(com.redhat.training.jb421.RouteTranformationTest)
+[                          main] RouteTranformationTest         INFO  Took: 1.215 seconds (1215 millis)
+[                          main] RouteTranformationTest         INFO  ********************************************************************************
+[                          main] GenericApplicationContext      INFO  Closing org.springframework.context.support.GenericApplicationContext@887af79: startup date [Wed Jul 05 20:42:48 EDT 2017]; root of context hierarchy
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is shutting down
+[                          main] DefaultShutdownStrategy        INFO  Starting to graceful shutdown 3 routes (timeout 10 seconds)
+[text) thread #1 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: recipientList shutdown complete, was consuming from: Endpoint[direct://recipientList]
+[text) thread #1 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: transformComma shutdown complete, was consuming from: Endpoint[file://origin]
+[text) thread #1 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: transformChars shutdown complete, was consuming from: Endpoint[direct://transformChars]
+[                          main] DefaultShutdownStrategy        INFO  Graceful shutdown of 3 routes completed in 0 seconds
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) uptime 1.218 seconds
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is shutdown in 0.013 seconds
+[                          main] DefaultListableBeanFactory     INFO  Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@63eef88a: defining beans [orderRouteBuilder,bodyTransformBean,destinationBean,template,consumerTemplate,jb421Context:beanPostProcessor,jb421Context,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+[                          main] XmlBeanDefinitionReader        INFO  Loading XML bean definitions from class path resource [META-INF/spring/bundle-context.xml]
+[                          main] CamelSpringTestContextLoader   INFO  Disabling Camel JMX globally for tests by default.  Use the DisableJMX annotation to override the default setting.
+[                          main] GenericApplicationContext      INFO  Refreshing org.springframework.context.support.GenericApplicationContext@71984c3: startup date [Wed Jul 05 20:42:50 EDT 2017]; root of context hierarchy
+[                          main] redAnnotationBeanPostProcessor INFO  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[                          main] DefaultListableBeanFactory     INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@363f6148: defining beans [orderRouteBuilder,bodyTransformBean,destinationBean,template,consumerTemplate,jb421Context:beanPostProcessor,jb421Context,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+[                          main] CamelSpringTestContextLoader   INFO  Setting shutdown timeout to [10 SECONDS] on CamelContext with name [jb421Context].
+[                          main] CamelSpringTestContextLoader   INFO  Enabling lazy loading of type converters on CamelContext with name [jb421Context].
+[                          main] CamelSpringTestContextLoader   INFO  Skipping starting CamelContext(s) as UseAdviceWith annotation was found and isUseAdviceWith is set to true.
+[                          main] RouteDefinition                INFO  AdviceWith route after: Route(transformChars)[[From[direct:transformChars]] -> [InterceptSendToEndpoint[direct:recipientList -> [To[mock:direct:recipientList]]], To[bean://bodyTransformBean?method=replaceNonASCIIWithQuestionMark], To[direct:recipientList]]]
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is starting
+[                          main] DefaultManagementStrategy      INFO  JMX is disabled
+[                          main] SpringCamelContext             INFO  AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+[                          main] SpringCamelContext             INFO  StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+[                          main] SpringCamelContext             INFO  Route: transformChars started and consuming from: Endpoint[direct://transformChars]
+[                          main] SpringCamelContext             INFO  Route: transformComma started and consuming from: Endpoint[file://origin]
+[                          main] SpringCamelContext             INFO  Route: recipientList started and consuming from: Endpoint[direct://recipientList]
+[                          main] SpringCamelContext             INFO  Total 3 routes, of which 3 are started.
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) started in 0.039 seconds
+[                          main] MockEndpoint                   INFO  Asserting: Endpoint[mock://direct:recipientList] is satisfied
+[                          main] RouteTranformationTest         INFO  ********************************************************************************
+[                          main] RouteTranformationTest         INFO  Testing done: testRouteFileChars(com.redhat.training.jb421.RouteTranformationTest)
+[                          main] RouteTranformationTest         INFO  Took: 1.058 seconds (1058 millis)
+[                          main] RouteTranformationTest         INFO  ********************************************************************************
+[                          main] GenericApplicationContext      INFO  Closing org.springframework.context.support.GenericApplicationContext@71984c3: startup date [Wed Jul 05 20:42:50 EDT 2017]; root of context hierarchy
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is shutting down
+[                          main] DefaultShutdownStrategy        INFO  Starting to graceful shutdown 3 routes (timeout 10 seconds)
+[text) thread #3 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: recipientList shutdown complete, was consuming from: Endpoint[direct://recipientList]
+[text) thread #3 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: transformComma shutdown complete, was consuming from: Endpoint[file://origin]
+[text) thread #3 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: transformChars shutdown complete, was consuming from: Endpoint[direct://transformChars]
+[                          main] DefaultShutdownStrategy        INFO  Graceful shutdown of 3 routes completed in 0 seconds
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) uptime 1.067 seconds
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is shutdown in 0.007 seconds
+[                          main] DefaultListableBeanFactory     INFO  Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@363f6148: defining beans [orderRouteBuilder,bodyTransformBean,destinationBean,template,consumerTemplate,jb421Context:beanPostProcessor,jb421Context,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+[                          main] XmlBeanDefinitionReader        INFO  Loading XML bean definitions from class path resource [META-INF/spring/bundle-context.xml]
+[                          main] CamelSpringTestContextLoader   INFO  Disabling Camel JMX globally for tests by default.  Use the DisableJMX annotation to override the default setting.
+[                          main] GenericApplicationContext      INFO  Refreshing org.springframework.context.support.GenericApplicationContext@27e0f2f5: startup date [Wed Jul 05 20:42:52 EDT 2017]; root of context hierarchy
+[                          main] redAnnotationBeanPostProcessor INFO  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[                          main] DefaultListableBeanFactory     INFO  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@61e3a1fd: defining beans [orderRouteBuilder,bodyTransformBean,destinationBean,template,consumerTemplate,jb421Context:beanPostProcessor,jb421Context,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+[                          main] CamelSpringTestContextLoader   INFO  Setting shutdown timeout to [10 SECONDS] on CamelContext with name [jb421Context].
+[                          main] CamelSpringTestContextLoader   INFO  Enabling lazy loading of type converters on CamelContext with name [jb421Context].
+[                          main] CamelSpringTestContextLoader   INFO  Skipping starting CamelContext(s) as UseAdviceWith annotation was found and isUseAdviceWith is set to true.
+[                          main] RouteDefinition                INFO  AdviceWith route after: Route(recipientList)[[From[direct:recipientList]] -> [InterceptSendToEndpoint[file:test -> [To[mock:file:test]]], InterceptSendToEndpoint[activemq:comics -> [To[mock:activemq:comics]]], InterceptSendToEndpoint[ftp:infrastructure -> [To[mock:ftp:infrastructure]]], Split[{tokenize(simple{${body}}, 
+)} -> [SetHeader[destination, bean[com.redhat.training.jb421.beans.DestinationBean method:calculateDestination]], RecipientList[header{destination}]]]]]
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is starting
+[                          main] DefaultManagementStrategy      INFO  JMX is disabled
+[                          main] SpringCamelContext             INFO  AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+[                          main] SpringCamelContext             INFO  StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+[                          main] SpringCamelContext             INFO  Route: recipientList started and consuming from: Endpoint[direct://recipientList]
+[                          main] SpringCamelContext             INFO  Route: transformComma started and consuming from: Endpoint[file://origin]
+[                          main] SpringCamelContext             INFO  Route: transformChars started and consuming from: Endpoint[direct://transformChars]
+[                          main] SpringCamelContext             INFO  Total 3 routes, of which 3 are started.
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) started in 0.049 seconds
+[                          main] MockEndpoint                   INFO  Asserting: Endpoint[mock://ftp:infrastructure] is satisfied
+[                          main] MockEndpoint                   INFO  Asserting: Endpoint[mock://activemq:comics] is satisfied
+[                          main] RouteTranformationTest         INFO  ********************************************************************************
+[                          main] RouteTranformationTest         INFO  Testing done: testRouteRecipientList(com.redhat.training.jb421.RouteTranformationTest)
+[                          main] RouteTranformationTest         INFO  Took: 1.246 seconds (1246 millis)
+[                          main] RouteTranformationTest         INFO  ********************************************************************************
+[                          main] GenericApplicationContext      INFO  Closing org.springframework.context.support.GenericApplicationContext@27e0f2f5: startup date [Wed Jul 05 20:42:52 EDT 2017]; root of context hierarchy
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is shutting down
+[                          main] DefaultShutdownStrategy        INFO  Starting to graceful shutdown 3 routes (timeout 10 seconds)
+[text) thread #5 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: transformChars shutdown complete, was consuming from: Endpoint[direct://transformChars]
+[text) thread #5 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: transformComma shutdown complete, was consuming from: Endpoint[file://origin]
+[text) thread #5 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: recipientList shutdown complete, was consuming from: Endpoint[direct://recipientList]
+[                          main] DefaultShutdownStrategy        INFO  Graceful shutdown of 3 routes completed in 0 seconds
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) uptime 1.278 seconds
+[                          main] SpringCamelContext             INFO  Apache Camel 2.17.0.redhat-630187 (CamelContext: jb421Context) is shutdown in 0.031 seconds
+[                          main] DefaultListableBeanFactory     INFO  Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@61e3a1fd: defining beans [orderRouteBuilder,bodyTransformBean,destinationBean,template,consumerTemplate,jb421Context:beanPostProcessor,jb421Context,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.182 sec
+
+Results :
+
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 12.652 s
+[INFO] Finished at: 2017-07-05T20:42:53-04:00
+[INFO] Final Memory: 35M/258M
+[INFO] ------------------------------------------------------------------------
