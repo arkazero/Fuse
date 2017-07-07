@@ -1,0 +1,13 @@
+{
+  "address": {
+    "id": "1",
+    "streetAddress1": "123 Main St",
+    "streetAddress2": "Suite 1000",
+    "streetAddress3": "",
+    "city": "Raleigh",
+    "state": "NC",
+    "postalCode": "27601",
+    "country": "US",
+    "type": "billing"
+  }
+}

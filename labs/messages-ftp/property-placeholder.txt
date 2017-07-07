@@ -1,0 +1,4 @@
+
+<propertyPlaceholder id="server" location="server.properties"/>
+
+{{server.hostname}}:{{server.port}}

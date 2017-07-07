@@ -1,0 +1,16 @@
+
+    <bean class="com.redhat.training.jb421.HeaderProcessor" id="headerProcessor"/>
+    <bean class="com.redhat.training.jb421.WrapProcessor" id="wrapProcessor"/>
+
+        <route id="wrapRoute">
+        	<from id="fromDirectWrap" uri="direct:wrap"/>
+            <process id="processWrap" ref="wrapProcessor"/>
+        	<to id="toDirectHeader" uri="direct:header"/>
+        </route>
+
+        <route id="journalRoute">
+            <from id="fromDirectHeader" uri="direct:header"/>
+            <process id="processHeader" ref="headerProcessor"/>
+            <toD id="toJournalOrQueue" uri="${header.destinationURI}"/>
+        </route>
+

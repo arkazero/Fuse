@@ -1,0 +1,1 @@
+@Uri("file:orders") ProducerTemplate orders, @Uri("mock:ftp:infrastructure1.lab.example.com")MockEndpoint ftp1Endpoint, @Uri("mock:ftp:infrastructure2.lab.example.com")MockEndpoint ftp2Endpoint

@@ -1,0 +1,18 @@
+<order>
+	<orderId>6</orderId>
+	<orderDate>2016-12-10T12:01:00-05:00</orderDate>
+	<totalInvoice>11.18</totalInvoice>
+	<customer>
+		<shippingAddress>
+			<state>US</state>
+		</shippingAddress>
+	</customer>
+	<orderItems>
+		<orderItem>
+			<orderItemId>11</orderItemId>
+			<orderItemQty>2</orderItemQty>
+			<orderItemPublisherName>ORly</orderItemPublisherName>
+			<orderItemPrice>5.59</orderItemPrice>
+		</orderItem>
+	</orderItems>
+</order>

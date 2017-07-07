@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Configures the Camel Context-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+    <bean class="com.redhat.training.jb421.HeaderProcessor" id="headerProcessor"/>
+    <bean class="com.redhat.training.jb421.WrapProcessor" id="wrapProcessor"/>
+    <camelContext id="directContext" xmlns="http://camel.apache.org/schema/spring">
+        <propertyPlaceholder id="server" location="server.properties"/>
+        <route id="ftpAbc">
+            <from uri="ftp://{{ftp.hostname}}:{{ftp.port}}/abc?username={{ftp.username}}&amp;password={{ftp.password}}&amp;delete=true"/>
+            <to uri="direct:wrap"/>
+        </route>
+        <route id="ftpOrly">
+            <from uri="ftp://{{ftp.hostname}}:{{ftp.port}}/orly?username={{ftp.username}}&amp;password={{ftp.password}}&amp;delete=true"/>
+            <to uri="direct:wrap"/>
+        </route>
+        <route id="ftpNamming">
+            <from uri="ftp://{{ftp.hostname}}:{{ftp.port}}/namming?username={{ftp.username}}&amp;password={{ftp.password}}&amp;delete=true"/>
+            <to uri="direct:wrap"/>
+        </route>
+        <route id="wrapRoute">
+            <from id="fromDirectWrap" uri="direct:wrap"/>
+            <process id="processWrap" ref="wrapProcessor"/>
+            <to id="toDirectHeader" uri="direct:header"/>
+        </route>
+        <route id="journalRoute">
+            <from id="fromDirectHeader" uri="direct:header"/>
+            <process id="processHeader" ref="headerProcessor"/>
+            <toD id="toJournalOrQueue" uri="${header.destinationURI}"/>
+        </route>
+  </camelContext>
+
+</beans>

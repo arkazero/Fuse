@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features name="contact-converter-repository">
+  <feature name="contact-converter" version="1.0">
+    <bundle>mvn:com.redhat.training.jb421/karaf-features-bean/1.0</bundle>
+    <bundle>mvn:com.redhat.training.jb421/karaf-features-route/1.0</bundle>
+    <!--
+    <feature>camel-core</feature>
+    <feature>camel-spring-osgi</feature>
+    -->
+  </feature>
+</features>
+

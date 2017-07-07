@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<parent>
+		<groupId>com.redhat.training</groupId>
+		<artifactId>camel-exercises</artifactId>
+		<version>1.0</version>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>develop-cdi</artifactId>
+	<name>Demo: Developing Routes with CDI</name>
+	<packaging>jar</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-core</artifactId>
+		</dependency>
+		<!-- TODO add dependency for camel-cdi and cdi -->
+<!-- 		<dependency> --> 
+<!--			<groupId>javax.enterprise</groupId> -->
+<!--			<artifactId>cdi-api</artifactId> -->
+<!--			<scope>provided</scope> -->
+<!--			<version>1.2</version> -->
+<!--		</dependency> -->
+<!--		<dependency> -->
+<!--			<groupId>org.apache.camel</groupId> -->
+<!--			<artifactId>camel-cdi</artifactId> -->
+<!--		</dependency> -->
+<!--		<dependency> -->
+<!--			<groupId>org.apache.camel</groupId> -->
+<!--			<artifactId>camel-test-cdi</artifactId> -->
+<!--			<scope>test</scope> -->
+<!--		</dependency> -->
+
+
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-spring</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-test-spring3</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-ftp</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-test-cdi</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.camel</groupId>
+				<artifactId>camel-maven-plugin</artifactId>
+				<!-- add CDI support -->
+				<!-- <configuration>
+					<useCDI>true</useCDI>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.deltaspike.cdictrl</groupId>
+						<artifactId>deltaspike-cdictrl-weld</artifactId>
+						<version>${deltaspike.version}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.jboss.weld.se</groupId>
+						<artifactId>weld-se</artifactId>
+						<version>${weld.se.version}</version>
+					</dependency>
+				</dependencies> -->
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

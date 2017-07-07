@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd       http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd http://www.springframework.org/schema/context        http://www.springframework.org/schema/context/spring-context.xsd   ">
+    <camelContext id="jb421Context" xmlns="http://camel.apache.org/schema/spring">
+        <propertyPlaceholder id="server" location="server.properties"/>
+        <route id="ftpRoute">
+            <from id="_from1" uri="ftp://{{server.hostname}}:{{server.port}}?username=ftpuser1&amp;password=w0rk1n&amp;delete=true"/>
+	    <log message="${body}"/>
+            <to id="_to1" uri="file:orders?fileExist=Append&amp;fileName=${header.CamelFileHost}"/>
+        </route>
+    </camelContext>
+</beans>

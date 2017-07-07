@@ -1,0 +1,33 @@
+<bean class="org.apache.activemq.camel.component.ActiveMQComponent" id="activemq">
+    <property name="connectionFactory">
+        <bean class="org.apache.activemq.ActiveMQConnectionFactory">
+            <property name="brokerURL" value="vm://localhost?broker.persistent=false&amp;broker.useJmx=false&amp;broker.enableStatistics=false"/>
+        </bean>
+    </property>
+</bean>
+
+<propertyPlaceholder id="server" location="ftp.properties"/>
+
+<onException id="networkErrorHandler">
+    <exception>java.net.SocketException</exception>
+    <redeliveryPolicy maximumRedeliveries="2"/>
+</onException>
+
+<setHeader headerName="orderId" id="_setHeader1">
+    <xpath>/order/orderId/text()</xpath>
+</setHeader>
+
+<xpath>/order/orderItems/orderItem/orderItemPublisherName/text() = 'ABC Company'</xpath>
+
+<!-- Use these for the Design tab -->
+<!--
+ftp://{{server.hostname}}:{{server.port}}/?username={{to.abc.username}}&password={{to.abc.password}}&fileName=order-${header.orderId}.xml
+ftp://{{server.hostname}}:{{server.port}}/?username={{to.orly.username}}&password={{to.orly.password}}&fileName=order-${header.orderId}.xml
+ftp://{{server.hostname}}:{{server.port}}/?username={{to.namming.username}}&password={{to.namming.password}}&fileName=order-${header.orderId}.xml
+-->
+
+<!-- Use these for the Source tab -->
+<to id="_to1" uri="ftp://{{server.hostname}}:{{server.port}}/?username={{to.abc.username}}&amp;password={{to.abc.password}}&amp;fileName=order-${header.orderId}.xml"/>
+<to id="_to2" uri="ftp://{{server.hostname}}:{{server.port}}/?username={{to.orly.username}}&amp;password={{to.orly.password}}&amp;fileName=order-${header.orderId}.xml"/>
+<to id="_to3" uri="ftp://{{server.hostname}}:{{server.port}}/?username={{to.namming.username}}&amp;password={{to.namming.password}}&amp;fileName=order-${header.orderId}.xml"/>
+

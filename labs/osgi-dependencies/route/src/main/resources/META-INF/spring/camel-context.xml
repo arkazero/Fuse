@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+    <bean class="com.redhat.training.jb421.bean.ContactConverter" id="converter"/>
+    <camelContext id="contactContext" xmlns="http://camel.apache.org/schema/spring">
+        <route id="convertRoute">
+            <from id="fromFiles" uri="file:/tmp/contact/incoming"/>
+            <bean id="converterBean" ref="converter"/>
+            <to id="toJournal" uri="file:/tmp/contact/?fileExist=Append&amp;fileName=converted.txt"/>
+        </route>
+    </camelContext>
+</beans>

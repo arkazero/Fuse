@@ -1,0 +1,5 @@
+<route id="ftpRoute">
+    <from uri="ftp://infrastructure.lab.example.com?
+        username=ftpuser1&amp;password=w0rk1n&amp;delete=true"/>
+    <to uri="file:orders?fileExist=Append&amp;fileName=${header.CamelFileHost}"/>
+</route>
