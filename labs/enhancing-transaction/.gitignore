@@ -1,0 +1,4 @@
+*.log
+activemq-data
+/transacted.mv.db
+/transacted.trace.db

@@ -1,0 +1,15 @@
+				<configuration>
+					<useCDI>true</useCDI>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.deltaspike.cdictrl</groupId>
+						<artifactId>deltaspike-cdictrl-weld</artifactId>
+						<version>${deltaspike.version}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.jboss.weld.se</groupId>
+						<artifactId>weld-se</artifactId>
+						<version>${weld.se.version}</version>
+					</dependency>
+				</dependencies>

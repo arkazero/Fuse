@@ -1,0 +1,29 @@
+package com.redhat.training.jb421;
+
+import org.apache.camel.builder.RouteBuilder;
+import org.apache.camel.model.dataformat.XmlJsonDataFormat;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class TransformRouteBuilder extends RouteBuilder {
+	
+	Logger log = LoggerFactory.getLogger(this.getClass());
+	
+	//TODO add the XmlJsonDataFormat 
+	
+	
+	@Override
+	public void configure() throws Exception {
+				
+		from("activemq:queue:orderInput?username=admin&password=admin")
+		.marshal().jaxb()
+		.log("XML Body: ${body}")
+		//TODO Marshal JSON
+		//TODO Filter JSON
+		//TODO wire tap
+		.to("mock:fulfillmentSystem");
+		
+		//TODO add direct route to mock order log end point
+	}
+
+}

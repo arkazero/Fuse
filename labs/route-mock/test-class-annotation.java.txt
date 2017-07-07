@@ -1,0 +1,2 @@
+@RunWith(CamelSpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations={"/META-INF/spring/bundle-context.xml"})

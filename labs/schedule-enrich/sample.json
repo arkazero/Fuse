@@ -1,0 +1,62 @@
+{
+	"id": null,
+	"orderDate": 1480454850000,
+	"discount": 0.00,
+	"delivered": false,
+	"customer": {
+		"id": 36,
+		"firstName": "Guest",
+		"lastName": "User",
+		"username": "guest",
+		"password": "user",
+		"email": "guest@doe.com",
+		"admin": false,
+		"billingAddress": {
+			"id": 83,
+			"streetAddress1": "123 Test St",
+			"streetAddress2": "",
+			"streetAddress3": "",
+			"city": "Testville",
+			"state": "MD",
+			"postalCode": "22304",
+			"country": "USA"
+		},
+		"shippingAddress": {
+			"id": 84,
+			"streetAddress1": "123 Test St",
+			"streetAddress2": "",
+			"streetAddress3": "",
+			"city": "Testville",
+			"state": "MD",
+			"postalCode": "22304",
+			"country": "USA"
+		}
+	},
+	"promoCode": [],
+	"orderItems": [
+		{
+			"id": null,
+			"quantity": 1,
+			"extPrice": 200.00,
+			"catalogItem": {
+				"id": 21,
+				"sku": "45692",
+				"title": "Authentic Police Cases",
+				"price": 200.00,
+				"description": "expensive sucker",
+				"author": "Unknown",
+				"imagePath": "/images/books/PoliceCases.jpg",
+				"category": "comics",
+				"newItem": false
+			}
+		}
+	],
+	"payment": {
+		"id": null,
+		"number": "123456789",
+		"expireMonth": "12",
+		"expireYear": "19",
+		"holderName": "Tester",
+		"paymentType": "EasyPay"
+	}
+}

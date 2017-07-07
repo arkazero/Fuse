@@ -1,0 +1,6 @@
+		//Evaluate if the bodyAndHeaderNotNull predicate is working
+		Exchange exchange = anExchange(context).build();
+		Order order = null;
+		exchange.getIn().setBody(order);
+		exchange.getIn().setHeader("test", null);;
+		assertPredicateDoesNotMatch(bodyAndHeaderNotNull(), exchange);

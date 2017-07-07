@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Configures the Camel Context for testing outside an applicaiton container -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+    <bean class="org.apache.activemq.ActiveMQConnectionFactory" id="activemqConnectionFactory">
+        <property name="brokerURL" value="vm://localhost?broker.persistent=false&amp;broker.useJmx=false&amp;broker.enableStatistics=false"/>
+    </bean>
+
+    <bean class="org.apache.camel.component.jms.JmsComponent" id="activemq">
+        <property name="connectionFactory" ref="activemqConnectionFactory"/>
+    </bean>
+
+    <import resource="camel-routes.xml"/>
+    
+</beans>

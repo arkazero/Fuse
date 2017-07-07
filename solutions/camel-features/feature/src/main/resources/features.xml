@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features name="contact-converter-solution-repository">
+  <feature name="contact-converter-solution" version="1.0">
+    <bundle>mvn:com.redhat.training.jb421/camel-features-bean-solution/1.0</bundle>
+    <bundle>mvn:com.redhat.training.jb421/camel-features-route-solution/1.0</bundle>
+    <!--
+    <feature>camel-core</feature>
+    <feature>camel-spring-osgi</feature>
+    <feature>camel-ftp</feature>
+    -->
+  </feature>
+</features>
+

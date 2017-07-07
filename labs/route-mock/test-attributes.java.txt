@@ -1,0 +1,11 @@
+	//Add secondRoute mock
+	@EndpointInject(uri="mock:secondRoute")
+	protected MockEndpoint resultHeaderMockEndpoint;
+
+	//Add orderHeader direct endpoint
+	@Produce(uri="direct:orderHeader")
+	protected ProducerTemplate ordersHeaderProducerTemplate;
+	
+	//Autowire CamelContext
+	@Autowired
+	private CamelContext context;

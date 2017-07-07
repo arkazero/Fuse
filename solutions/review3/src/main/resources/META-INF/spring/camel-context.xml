@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans      http://www.springframework.org/schema/beans/spring-beans.xsd        http://camel.apache.org/schema/spring      http://camel.apache.org/schema/spring/camel-spring.xsd">
+    <bean class="com.redhat.training.routes.TransactedRouteBuilder" id="transRouteBuilder"/>
+    <bean class="com.atomikos.jms.AtomikosConnectionFactoryBean"
+        id="atomikosJmsConnectionFactory" init-method="init">
+        <property name="uniqueResourceName" value="ActiveMQXA"/>
+        <property name="poolSize" value="5"/>
+        <property name="maxPoolSize" value="10"/>
+        <property name="ignoreSessionTransactedFlag" value="false"/>
+        <property name="xaConnectionFactory">
+            <bean class="org.apache.activemq.ActiveMQXAConnectionFactory">
+                <property name="brokerURL" value="tcp://localhost:61999"/>
+                <property name="redeliveryPolicy" ref="redeliveryPolicy"/>
+                <property name="trustAllPackages" value="true"/>
+            </bean>
+        </property>
+    </bean>
+    <bean class="org.apache.activemq.RedeliveryPolicy" id="redeliveryPolicy">
+        <property name="maximumRedeliveries" value="3"/>
+        <property name="redeliveryDelay" value="1000"/>
+    </bean>
+    <bean class="org.apache.camel.component.jms.JmsConfiguration" id="jmsConfig">
+        <property name="connectionFactory" ref="atomikosJmsConnectionFactory"/>
+        <property name="transactionManager" ref="txMgr"/>
+        <!-- 'transacted' must be set to false for XA transactions. The name of 
+			this property is misleading. What it really indicates is whether or not the 
+			Camel JMS component supports local transactions -->
+        <property name="transacted" value="false"/>
+        <property name="cacheLevelName" value="CACHE_CONSUMER"/>
+    </bean>
+    <bean class="org.apache.activemq.camel.component.ActiveMQComponent" id="activemq">
+        <property name="configuration" ref="jmsConfig"/>
+    </bean>
+    <bean
+        class="org.springframework.transaction.jta.JtaTransactionManager" id="txMgr">
+        <property name="allowCustomIsolationLevels" value="true"/>
+        <property name="transactionManager">
+            <bean class="com.atomikos.icatch.jta.UserTransactionManager"
+                destroy-method="close" init-method="init">
+                <property name="forceShutdown" value="false"/>
+            </bean>
+        </property>
+        <property name="userTransaction">
+            <bean class="com.atomikos.icatch.jta.J2eeUserTransaction">
+                <property name="transactionTimeout" value="300"/>
+            </bean>
+        </property>
+    </bean>
+    <bean class="org.apache.camel.spring.spi.SpringTransactionPolicy" id="PROPAGATION_REQUIRED">
+        <property name="transactionManager" ref="txMgr"/>
+        <property name="propagationBehaviorName" value="PROPAGATION_REQUIRED"/>
+    </bean>
+    <bean class="org.apache.camel.spring.spi.SpringTransactionPolicy" id="PROPAGATION_REQUIRES_NEW">
+        <property name="transactionManager" ref="txMgr"/>
+        <property name="propagationBehaviorName" value="PROPAGATION_REQUIRES_NEW"/>
+    </bean>
+    <bean
+        class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" id="emf">
+        <!-- Entity annotation scan -->
+        <property name="packagesToScan" value="com.redhat.training.model"/>
+        <!-- Data source (H2) -->
+        <property name="jtaDataSource">
+            <bean class="com.atomikos.jdbc.AtomikosDataSourceBean"
+                destroy-method="close" init-method="init">
+                <property name="uniqueResourceName" value="AtomikosDataSource"/>
+                <property name="poolSize" value="5"/>
+                <property name="testQuery" value="SELECT 1"/>
+                <property name="xaDataSource">
+                    <bean class="org.h2.jdbcx.JdbcDataSource">
+                        <property name="URL" value="jdbc:h2:mem:db"/>
+                        <property name="user" value="sa"/>
+                        <property name="password" value="sa"/>
+                    </bean>
+                </property>
+            </bean>
+        </property>
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
+        </property>
+        <property name="jpaProperties">
+            <props>
+                <prop key="hibernate.transaction.factory_class">org.hibernate.transaction.CMTTransactionFactory
+				</prop>
+                <!-- Setup Hibernate to participate in the Atomikos transaction -->
+                <prop key="hibernate.transaction.manager_lookup_class">com.atomikos.icatch.jta.hibernate3.TransactionManagerLookup
+				</prop>
+                <prop key="hibernate.hbm2ddl.auto">create-drop</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>
+            </props>
+        </property>
+    </bean>
+    <bean class="org.apache.camel.component.jpa.JpaComponent" id="jpa">
+        <property name="entityManagerFactory" ref="emf"/>
+        <property name="transactionManager" ref="txMgr"/>
+    </bean>
+    <camelContext id="transaction-context" xmlns="http://camel.apache.org/schema/spring">
+        <routeBuilder ref="transRouteBuilder"/>
+    </camelContext>
+</beans>

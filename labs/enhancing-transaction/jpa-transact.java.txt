@@ -1,0 +1,5 @@
+		JpaComponent jpaComponent = new JpaComponent();
+		jpaComponent.setEntityManagerFactory(entityManager.getEntityManagerFactory());
+		jpaComponent.setTransactionManager(transactionManager);
+		getContext().addComponent("jpa", jpaComponent);
+		

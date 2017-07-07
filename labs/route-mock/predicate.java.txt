@@ -1,0 +1,1 @@
+		return and(isNotNull(bodyExpression()),isNotNull(headerExpression("test")));

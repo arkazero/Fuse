@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://java.sun.com/xml/ns/persistence
+        http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+    <persistence-unit name="messages">
+	<provider>org.hibernate.ejb.HibernatePersistence</provider>
+	<class>com.redhat.training.jb421.model.Message</class>
+        <properties>
+		<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
+		<property name="hibernate.hbm2ddl.auto" value="create-drop" />
+		<property name="hibernate.show_sql" value="true" />
+		<property name="hibernate.format_sql" value="true" />
+		<property name="hibernate.current_session_context_class" value="jta"/>
+		<property name="javax.persistence.transactionType" value="jta"/>
+		<property name="hibernate.transaction.jta.platform" value="com.atomikos.icatch.jta.hibernate4.AtomikosPlatform"/>
+		<property name="hibernate.search.autoregister_listeners" value="false"/>
+        </properties>
+    </persistence-unit>
+</persistence>

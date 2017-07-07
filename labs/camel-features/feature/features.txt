@@ -1,0 +1,1 @@
+    <bundle>mvn:com.redhat.training.jb421/camel-features-bean/1.0</bundle>

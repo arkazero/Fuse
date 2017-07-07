@@ -1,0 +1,7 @@
+				//TODO intercept jms endpoints calls.
+				interceptSendToEndpoint("jms:*")
+					.choice()
+						//TODO evaluate if the JMSRedelivered is false
+						.when(header("JMSRedelivered").isEqualTo("false"))
+						//TODO throw a ConnectException
+						.	throwException(new ConnectException("Cannot connect to the database"));

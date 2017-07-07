@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- defines only the routes -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+    <bean class="com.redhat.training.jb421.CBRRouteBuilder" id="cbrRouteBuilder"/>
+    <camelContext id="cbrContext" xmlns="http://camel.apache.org/schema/spring">
+        <propertyPlaceholder id="server" location="server.properties"/>
+        <routeBuilder ref="cbrRouteBuilder"/>
+    </camelContext>
+</beans>

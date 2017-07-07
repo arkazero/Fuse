@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Configures the Camel Context for deploying to EAP -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
+       http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd">
+
+    <!-- Using embedded HornetQ from EAP -->
+    <jee:jndi-lookup jndi-name="java:/ConnectionFactory" id="eapConnectionFactory" />
+
+    <bean class="org.apache.camel.component.jms.JmsComponent" id="hornetq">
+        <property name="connectionFactory" ref="eapConnectionFactory"/>
+    </bean>
+ 
+    <import resource="camel-routes.xml"/>
+    
+</beans>

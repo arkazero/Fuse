@@ -1,0 +1,2 @@
+		JmsComponent jmsComponent = JmsComponent.jmsComponentTransacted(connectionFactory, transactionManager);
+		getContext().addComponent("jms", jmsComponent);

@@ -1,0 +1,10 @@
+	@Test
+	public void testRouteHeaderWithHeaderAndBody() throws Exception {
+		//Evaluate if the second route processes a body with an empty order and header
+		// named test with a String named input
+		resultHeaderMockEndpoint.setExpectedMessageCount(1);
+		NotifyBuilder builder = new NotifyBuilder(context).fromRoute("orderHeader").whenDone(1).create();
+		ordersHeaderProducerTemplate.sendBodyAndHeader(new Order(), "test","input");
+		builder.matches(2, TimeUnit.SECONDS);
+		resultHeaderMockEndpoint.assertIsSatisfied();
+	}

@@ -1,0 +1,4 @@
+<dependency>
+	<groupId>org.apache.camel</groupId>
+	<artifactId>camel-restlet</artifactId>
+</dependency>

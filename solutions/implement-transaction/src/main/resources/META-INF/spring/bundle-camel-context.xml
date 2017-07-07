@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:amq="http://activemq.apache.org/schema/core"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="  http://www.springframework.org/schema/beans   http://www.springframework.org/schema/beans/spring-beans.xsd         http://camel.apache.org/schema/spring   http://camel.apache.org/schema/spring/camel-spring.xsd      http://www.springframework.org/schema/tx                  http://www.springframework.org/schema/tx/spring-tx.xsd  http://activemq.apache.org/schema/core   http://activemq.apache.org/schema/core/activemq-core.xsd  ">
+    <bean class="com.redhat.training.jb421.MessageRouteBuilder" id="messageRouteBuilder"/>
+    <camelContext id="jb421Context" xmlns="http://camel.apache.org/schema/spring">
+        <routeBuilder ref="messageRouteBuilder"/>
+    </camelContext>
+    <amq:broker id="amqBroker" persistent="false" useJmx="false">
+        <amq:transportConnectors>
+            <amq:transportConnector uri="tcp://localhost:61616"/>
+        </amq:transportConnectors>
+    </amq:broker>
+    <tx:annotation-driven
+        mode="proxy" proxy-target-class="false" transaction-manager="JtaTransactionManager"/>
+    <bean class="com.atomikos.icatch.config.UserTransactionServiceImp"
+        destroy-method="shutdownForce" id="userTransactionService" init-method="init"/>
+    <bean class="com.atomikos.icatch.jta.UserTransactionManager"
+        depends-on="userTransactionService" destroy-method="close"
+        id="AtomikosTransactionManager" init-method="init"/>
+    <bean class="com.atomikos.icatch.jta.UserTransactionImp"
+        depends-on="userTransactionService" id="AtomikosUserTransaction">
+        <property name="transactionTimeout" value="300"/>
+    </bean>
+    <bean
+        class="org.springframework.transaction.jta.JtaTransactionManager"
+        depends-on="userTransactionService" id="JtaTransactionManager">
+        <property name="allowCustomIsolationLevels" value="true"/>
+        <property name="transactionManager" ref="AtomikosTransactionManager"/>
+        <property name="userTransaction" ref="AtomikosUserTransaction"/>
+    </bean>
+    <bean class="org.apache.camel.spring.spi.SpringTransactionPolicy" id="PROPAGATION_REQUIRED">
+        <property name="transactionManager" ref="JtaTransactionManager"/>
+        <property name="propagationBehaviorName" value="PROPAGATION_REQUIRED"/>
+    </bean>
+    <bean class="org.apache.camel.spring.spi.SpringTransactionPolicy" id="PROPAGATION_REQUIRES_NEW">
+        <property name="transactionManager" ref="JtaTransactionManager"/>
+        <property name="propagationBehaviorName" value="PROPAGATION_REQUIRES_NEW"/>
+    </bean>
+    <bean class="com.atomikos.jdbc.AtomikosDataSourceBean"
+        destroy-method="close" id="atomikosDataSource" init-method="init">
+        <property name="uniqueResourceName" value="AtomikosDataSource"/>
+        <property name="xaDataSource" ref="xaReferent"/>
+    </bean>
+    <bean class="org.h2.jdbcx.JdbcDataSource" id="xaReferent">
+        <property name="URL" value="jdbc:h2:~/implement-transaction-db;MODE=PostgreSQL;MVCC=TRUE;DB_CLOSE_DELAY=-1"/>
+        <property name="user" value="sa"/>
+        <property name="password" value=""/>
+    </bean>
+    <bean
+        class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
+        depends-on="JtaTransactionManager" id="emf">
+        <property name="persistenceUnitName" value="messages"/>
+        <property name="jtaDataSource" ref="atomikosDataSource"/>
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
+        </property>
+    </bean>
+    <bean
+        class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" id="bean-0398653a-4033-4886-b4cf-30f95886bad7"/>
+    <bean
+        class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" id="bean-3a6cf423-4813-4d07-913b-d0c7d7befa56"/>
+    <bean class="org.apache.camel.component.jms.JmsConfiguration" id="jmsConfig">
+        <property name="connectionFactory" ref="xaFactory"/>
+    </bean>
+    <bean class="org.apache.activemq.camel.component.ActiveMQComponent" id="activemq">
+        <property name="configuration" ref="jmsConfig"/>
+        <property name="transacted" value="true"/>
+        <property name="transactionManager" ref="JtaTransactionManager"/>
+        <property name="cacheLevelName" value="CACHE_CONSUMER"/>
+    </bean>
+    <!-- ActiveMQ configuration -->
+    <bean class="org.apache.activemq.ActiveMQXAConnectionFactory"
+        depends-on="amqBroker" id="xaFactory">
+        <property name="brokerURL" value="tcp://localhost:61616"/>
+        <property name="redeliveryPolicy" ref="redeliveryPolicy"/>
+        <property name="trustAllPackages" value="true"/>
+    </bean>
+    <bean class="com.atomikos.jms.AtomikosConnectionFactoryBean"
+        depends-on="amqBroker" destroy-method="close"
+        id="atomikosJmsConnectionFactory" init-method="init">
+        <property name="uniqueResourceName" value="ActiveMQXA"/>
+        <property name="xaConnectionFactory" ref="xaFactory"/>
+        <property name="poolSize" value="5"/>
+        <property name="maxPoolSize" value="10"/>
+        <property name="ignoreSessionTransactedFlag" value="false"/>
+    </bean>
+    <bean class="org.apache.activemq.RedeliveryPolicy" id="redeliveryPolicy">
+        <property name="maximumRedeliveries" value="3"/>
+        <property name="redeliveryDelay" value="1000"/>
+    </bean>
+</beans>

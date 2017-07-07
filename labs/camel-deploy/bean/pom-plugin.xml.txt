@@ -1,0 +1,11 @@
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+          <instructions>
+            <Private-Package>com.redhat.training.jb421</Private-Package>
+            <Export-Package>com.redhat.training.jb421.bean</Export-Package>
+          </instructions>
+        </configuration>
+      </plugin>

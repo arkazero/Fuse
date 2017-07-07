@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans      http://www.springframework.org/schema/beans/spring-beans.xsd        http://camel.apache.org/schema/spring      http://camel.apache.org/schema/spring/camel-spring.xsd">
+    <bean class="com.redhat.training.routes.OrderRouteBuilder" id="orderRouteBuilder"/>
+    <bean class="com.redhat.training.beans.Performance"
+        destroy-method="dumpStats" id="performance" scope="singleton"/>
+        <!--  TODO declare te bean responsible for assigning unique numbers to each order -->
+    <bean class="com.redhat.training.beans.AssignBatchNumber"
+        id="assignBatch" scope="singleton"/>
+    <bean class="com.redhat.training.beans.OrderBean" id="order"/>
+    <bean class="com.redhat.training.beans.BatchBean" id="batch"/>
+    <camelContext id="order-context" xmlns="http://camel.apache.org/schema/spring">
+        <routeBuilder ref="orderRouteBuilder"/>
+    </camelContext>
+</beans>

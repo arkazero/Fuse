@@ -1,0 +1,24 @@
+
+	        //TODO use a processor and a filter to skip test orders
+	        .process(new TestProcessor())
+	        .filter(simple("${header.skipOrder} == null"))
+
+			//TODO use CBR to route to the vendor queue
+		        .when(simple("${header.vendorName} == 'ABC Company'"))
+		            .log("sending to queue abc")
+		            .to(QUEUE_URI + "abc" + jmsOpts)
+		        .when(simple("${header.vendorName} == 'ORly'"))
+		            .log("sending to queue orly")
+		            .to(QUEUE_URI + "orly" + jmsOpts)
+		        .when(simple("${header.vendorName} == 'Namming'"))
+		            .log("sending to queue namming")
+		            .to(QUEUE_URI + "namming" + jmsOpts)
+
+                //TODO use a processor to determine the vendor queue
+                .process(new DestinationProcessor())
+
+                        //TODO use toD to route to the vendor queue
+			.when(simple("${header.queueName} != ''"))
+		            .log("sending to queue: ${header.queueName}" )
+		            .toD(QUEUE_URI + "${header.queueName}" + jmsOpts)
+

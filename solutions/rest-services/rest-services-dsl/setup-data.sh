@@ -1,0 +1,12 @@
+mysql --host=infrastructure.lab.example.com -ubookstore -predhat -t -e "delete from bookstore.OrderItem where id = 101;"
+mysql --host=infrastructure.lab.example.com -ubookstore -predhat -t -e "delete from bookstore.OrderItem where id = 100;"
+mysql --host=infrastructure.lab.example.com -ubookstore -predhat -t -e "delete from bookstore.order_ where id = 100;"
+mysql --host=infrastructure.lab.example.com -ubookstore -predhat -t -e "delete from bookstore.Customer where id = 100;"
+mysql --host=infrastructure.lab.example.com -ubookstore -predhat -t -e "delete from bookstore.Address where id = 100;"
+mysql --host=infrastructure.lab.example.com -ubookstore -predhat -t -e "insert into bookstore.Customer (id,admin,email,firstName,lastName,password,username) values (100,0,'user01@example.com','User','Name','chageme','user01');"
+mysql --host=infrastructure.lab.example.com -ubookstore -predhat -t -e "insert into bookstore.Address (id,city,country,postalCode,state,streetAddress1,streetAddress2,streetAddress3) values (100,'Raleigh','USA','27601','NC','100 East Davie Street','','');"
+mysql --host=infrastructure.lab.example.com -ubookstore -predhat -t -e "update bookstore.Customer set ship_addr_id = 100, bill_addr_id = 100 where id = 100;"
+mysql --host=infrastructure.lab.example.com -ubookstore -predhat -t -e "insert into bookstore.order_ (id,delivered,discount,orderDate,cust_id,payment_id) values (100,0,0.00,now(),100,null);"
+mysql --host=infrastructure.lab.example.com -ubookstore -predhat -t -e "insert into bookstore.OrderItem (id,extPrice,quantity,item_id,order_id) values (100,15.99,2,1,100);"
+mysql --host=infrastructure.lab.example.com -ubookstore -predhat -t -e "insert into bookstore.OrderItem (id,extPrice,quantity,item_id,order_id) values (101,19.49,5,2,100);"
+echo 'Lab setup complete!'
